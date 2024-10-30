@@ -26,8 +26,13 @@ html, body {
   justify-content: center;
   color: white;
   width: 100vw;
-  padding: 0 20px; /* Add some padding to prevent text from touching edges */
-  text-align: center; /* Ensure text is centered */
+  padding: 0 20px;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.App-header:hover {
+  background-color: #1f2833; /* Darken the background when hovered */
 }
 
 .profile-pic {
@@ -36,29 +41,45 @@ html, body {
   border-radius: 50%;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); /* Slightly enlarge the image on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deepen shadow on hover */
 }
 
 h1 {
   font-size: 3em;
-  margin: 20px 0; /* Add space above and below the heading */
-  line-height: 1.2; /* Make the heading more compact */
+  margin: 20px 0;
+  line-height: 1.2;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+h1:hover {
+  color: #61dafb; /* Change text color on hover */
 }
 
 p {
   font-size: 1.2em;
   margin: 10px 0;
-  max-width: 800px; /* Limit width of the paragraph for better readability */
-  line-height: 1.5; /* Improve paragraph readability */
-  padding: 0 20px; /* Add padding to prevent text from hugging the edges */
+  max-width: 800px;
+  line-height: 1.5;
+  padding: 0 20px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+p:hover {
+  color: #c5c6c7; /* Lighten paragraph text on hover */
 }
 
 /* Ensure buttons are displayed as a vertical stack on mobile devices */
 .links {
   display: flex;
-  flex-direction: column; /* Stack the buttons vertically */
-  gap: 15px; /* Add space between buttons */
+  flex-direction: column;
+  gap: 15px;
   margin-top: 20px;
-  width: 100%; /* Ensure buttons take up full width on smaller screens */
+  width: 100%;
 }
 
 .button {
@@ -70,15 +91,16 @@ p {
   font-size: 1em;
   font-weight: bold;
   border-radius: 30px;
-  transition: background-color 0.3s ease;
-  width: 80%; /* Button width */
-  max-width: 300px; /* Max width on larger screens */
-  margin: 0 auto; /* Center buttons horizontally */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .button:hover {
-  background-color: #21a1f1;
-  color: white;
+  background-color: #21a1f1; /* Change button color on hover */
+  transform: translateY(-5px); /* Move button up on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow to button */
 }
 
 .contact-info {
@@ -88,10 +110,12 @@ p {
 
 a {
   color: #61dafb;
+  transition: color 0.3s ease, transform 0.3s ease; /* Add smooth transition for links */
 }
 
 a:hover {
   color: #21a1f1;
+  transform: scale(1.1); /* Slightly enlarge links on hover */
 }
 
 /* Media Queries for Mobile Devices */
@@ -110,7 +134,7 @@ a:hover {
   }
 
   .button {
-    width: 90%; /* Make buttons wider on smaller screens */
+    width: 90%;
   }
 }
 
@@ -129,7 +153,6 @@ a:hover {
   }
 
   .button {
-    width: 100%; /* Full-width buttons on very small screens */
+    width: 100%;
   }
 }
-
