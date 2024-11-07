@@ -73,7 +73,7 @@ p:hover {
   color: #c5c6c7; /* Lighten paragraph text on hover */
 }
 
-/* Ensure buttons are displayed as a vertical stack on mobile devices */
+/* Links section with button styles */
 .links {
   display: flex;
   flex-direction: column;
@@ -103,6 +103,7 @@ p:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow to button */
 }
 
+/* Contact info section */
 .contact-info {
   margin-top: 30px;
   font-size: 1.1em;
@@ -116,6 +117,34 @@ a {
 a:hover {
   color: #21a1f1;
   transform: scale(1.1); /* Slightly enlarge links on hover */
+}
+
+/* View Counter Styles */
+.view-counter {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-count {
+  font-weight: bold;
+  font-size: 1.2em;
+  animation: countAnimation 0.5s ease-in-out;
+}
+
+/* Animation for view count */
+@keyframes countAnimation {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Media Queries for Mobile Devices */
