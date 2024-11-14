@@ -1,41 +1,62 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs'); // Import file system module to handle JSON file
+const fs = require('fs');
+const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Serve static files from the React app
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// View Counter Endpoint
-app.get('/api/views', (req, res) => {
-  // Read the current view count from views.json
-  fs.readFile('views.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error("Error reading views.json:", err);
-      return res.status(500).json({ error: "Could not read view count" });
-    }
+const loadCounts = () => {
+  try {
+    const data = fs.readFileSync('views.json', 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("Could not read views.json:", error);
+    return { count: 0, uniqueVisitors: 0 };
+  }
+};
 
-    // Parse JSON data and increment the count
-    const viewsData = JSON.parse(data);
-    viewsData.count += 1;
-
-    // Write the updated view count back to views.json
-    fs.writeFile('views.json', JSON.stringify(viewsData), (err) => {
-      if (err) {
-        console.error("Error writing to views.json:", err);
-        return res.status(500).json({ error: "Could not update view count" });
-      }
-
-      // Send the updated count to the client
-      res.json({ count: viewsData.count });
-    });
+const saveCounts = (data) => {
+  fs.writeFileSync('views.json', JSON.stringify(data), (error) => {
+    if (error) console.error("Could not write to views.json:", error);
   });
+};
+
+// GET route for fetching current view and unique visitor counts
+app.get('/api/views', (req, res) => {
+  const counts = loadCounts();
+
+  // Increment total view count
+  counts.count += 1;
+  saveCounts(counts); // Attempt to save the updated counts
+
+  res.json({ views: counts.count, uniqueVisitors: counts.uniqueVisitors });
 });
 
-// Other API routes can go here
-app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from the backend!' });
+// POST route for incrementing unique visitor count
+app.post('/api/views', (req, res) => {
+  const counts = loadCounts();
+
+  // Check if visitor is unique by cookie
+  if (!req.cookies.hasVisited) {
+    counts.uniqueVisitors += 1;
+    res.cookie('hasVisited', 'true', { maxAge: 365 * 24 * 60 * 60 * 1000 }); // 1-year cookie
+  }
+
+  // Increment total view count
+  counts.count += 1;
+
+  // Save updated counts and check for errors
+  try {
+    saveCounts(counts);
+  } catch (error) {
+    console.error("Error saving counts:", error);
+    return res.status(500).json({ error: "Could not update view counts" });
+  }
+
+  res.json({ views: counts.count, uniqueVisitors: counts.uniqueVisitors });
 });
 
 // Catch-all handler for any request that doesn't match API routes

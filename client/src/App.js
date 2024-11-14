@@ -4,20 +4,31 @@ import Me from './Me2.png';
 
 function App() {
   const [views, setViews] = useState(0);
+  const [uniqueVisitors, setUniqueVisitors] = useState(0);
 
   useEffect(() => {
-    // Fetch the page view count from the backend
-    const fetchViews = async () => {
-      try {
-        let response = await fetch('/api/views');
-        let data = await response.json();
-        setViews(data.count);
-      } catch (error) {
-        console.error("Error fetching view count:", error);
+    const checkUniqueVisitor = async () => {
+      const isUnique = !localStorage.getItem('hasVisited');
+
+      if (isUnique) {
+        // Mark as visited in localStorage
+        localStorage.setItem('hasVisited', 'true');
+
+        // Request to increment unique visitor count on the backend
+        const response = await fetch('/api/views', { method: 'POST' });
+        const data = await response.json();
+        setViews(data.views);
+        setUniqueVisitors(data.uniqueVisitors);
+      } else {
+        // Fetch current counts without incrementing unique visitors
+        const response = await fetch('/api/views');
+        const data = await response.json();
+        setViews(data.views);
+        setUniqueVisitors(data.uniqueVisitors);
       }
     };
 
-    fetchViews();
+    checkUniqueVisitor();
   }, []);
 
   return (
@@ -42,6 +53,7 @@ function App() {
         <div className="view-counter">
           <span role="img" aria-label="eye">👁️</span>
           <p className="view-count">Page Views: {views}</p>
+          <p className="unique-count">Unique Visitors: {uniqueVisitors}</p>
         </div>
       </header>
     </div>

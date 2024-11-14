@@ -119,23 +119,24 @@ a:hover {
   transform: scale(1.1); /* Slightly enlarge links on hover */
 }
 
-/* View Counter Styles */
+/* View Counter and Unique Visitor Counter Styles */
 .view-counter {
   margin-top: 30px;
   font-size: 1.2em;
   color: #61dafb;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
-.view-count {
+.view-count, .unique-count {
   font-weight: bold;
   font-size: 1.2em;
   animation: countAnimation 0.5s ease-in-out;
 }
 
-/* Animation for view count */
+/* Animation for view and unique visitor counts */
 @keyframes countAnimation {
   0% {
     transform: scale(1.2);
