@@ -18,6 +18,7 @@ This project was built as a personal portfolio to highlight my skills, provide e
 - **Responsive Design**: Ensures a seamless experience across devices.
 - **Links to Social Profiles**: Buttons that link to my GitHub and Discord server.
 - **Page View Counter**: Displays the number of visitors using a simple counter.
+- **Unique Visitor Counter**: Displays the number of unique visitors on my website, using a counter that will store a cookie in your browser to track if you have viewed the site before.
 - **Smooth Transitions**: Hover effects and animations for enhanced user experience.
 
 ## 📂 Project Structure
