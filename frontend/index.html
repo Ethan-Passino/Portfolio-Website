@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Passino - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Global Styling */
+        html {
+            scroll-behavior: smooth;
+            font-family: "Rubik", sans-serif;
+        }
+    
+        body {
+            background: linear-gradient(135deg, #0d1a36, #041c3c, #020817); /* Blue gradient */
+            color: #b0b0b0; /* Gray text */
+        }
+    
+        section {
+            scroll-margin-top: 80px;
+            background: rgba(0, 0, 0, 0.8); /* Dark background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin: 0 auto;
+            max-width: 1200px; /* Center content */
+        }
+    
+        h1, h2, h3 {
+            color: #ffffff;
+            background: linear-gradient(90deg, #4a90e2, #146ebe, #003d73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            display: flex; /* Enable flexbox */
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Name on the left, links on the right */
+            height: 60px; /* Set a consistent height for the navbar */
+            padding: 0 20px; /* Add horizontal padding */
+        }
+    
+        nav ul {
+            display: flex; /* Align navigation links in a row */
+            align-items: center; /* Center them vertically */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            list-style: none; /* Remove bullet points */
+        }
+    
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 15px; /* Add spacing around links */
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+    
+        nav a.active {
+            text-decoration: underline;
+        }
+    
+        nav a:hover {
+            color: #4a90e2;
+        }
+    
+        #menu-toggle {
+            display: block; /* Show the menu button */
+            padding: 10px 20px;
+            background: #146ebe;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        @media (min-width: 768px) {
+            #menu-toggle {
+                display: none; /* Hide the menu button on larger screens */
+            }
+        }
+    
+        .menu {
+            display: none; /* Hidden by default */
+        }
+    
+        .menu.active {
+            display: block;
+        }
+    
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #4a90e2, #146ebe);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+    
+        .button:hover {
+            background: linear-gradient(90deg, #146ebe, #4a90e2);
+            transform: scale(1.05);
+        }
+    
+        /* Hero Section */
+        #hero {
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Align text to the center */
+            margin: 0 auto; /* Ensure content stays in the middle */
+        }
+    
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+    
+        /* Technical Competency Cards */
+        .competency-card {
+            width: 100%;
+            min-height: 250px;
+            padding: 2rem;
+            background-color: #1f2937;
+            color: #b0b0b0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .competency-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .competency-card h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+    
+        .competency-card h3 img {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+    
+        .competency-card p {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="py-4 px-6">
+        <div class="flex justify-between items-center w-full">
+            <!-- Name aligned to the left -->
+            <a href="#hero" class="text-2xl font-bold flex-shrink-0">Ethan Passino</a>
+    
+            <!-- Links aligned to the right -->
+            <ul id="navbar" class="hidden md:flex space-x-6 ml-auto">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#competencies">Technical Competencies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+    
+            <!-- Mobile menu toggle -->
+            <button id="menu-toggle" class="block md:hidden bg-blue-600 px-4 py-2 rounded">Menu</button>
+        </div>
+    </nav>
+    
+    
+
+    <!-- Hero Section -->
+    <header id="hero" class="py-20 mt-16 container">
+        <h1 class="text-6xl font-extrabold">Ethan Passino</h1>
+        <p class="mt-4 text-lg">Software Engineer | Full Stack Developer | Technology Enthusiast</p>
+        <div class="mt-8">
+            <a href="#projects" class="button">View My Work</a>
+            <a href="https://github.com/Ethan-Passino" target="_blank" class="button ml-4">GitHub</a>
+            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" class="button ml-4">LinkedIn</a>
+            <a href="https://discord.gg/0deI7V0QFPpXLQJW" target="_blank" class="button ml-4">Discord Server</a>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 text-center">
+        <img src="Ethan.jpg" alt="Profile" class="rounded-full mx-auto w-48 h-48">
+        <h2 class="text-4xl font-bold mt-10">About Me</h2>
+        <p class="mt-4 max-w-3xl mx-auto">
+            Welcome to my portfolio! I’m a dedicated software engineer with a passion for creating impactful projects. 
+            My expertise spans full-stack development, backend optimization, and crafting user-friendly interfaces. 
+            From building robust web applications to exploring cutting-edge technologies, I bring creativity and technical proficiency to every challenge.
+        </p>
+        <p class="mt-4 max-w-3xl mx-auto">
+            My programming journey began in 2016 during a high school computer science class where I first encountered Python. 
+            I quickly became fascinated by the potential of coding and created a variety of projects, from console-based tools 
+            to simple games. The following year, in AP Computer Science, I expanded my skills with Java and built several 
+            games from scratch. Since then, I’ve continued to grow my skills by exploring new languages, frameworks, and technologies, 
+            with a constant passion for creating impactful software.
+        </p>
+    </section><br>
+
+  <!-- Technical Competencies Section -->
+  <section id="competencies" class="mb-16">
+    <h2 class="text-3xl font-bold text-center mb-10">Technical Competencies</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+        <!-- Programming Languages -->
+        <div class="competency-card">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/source-code.png" alt="Programming" class="w-8 h-8 mr-2">
+                Programming Languages
+            </h3>
+            <p>
+                I am proficient in Python, C++, Java, C, JavaScript, TypeScript, MySQL, HTML, CSS, JSON, YAML, and C#. 
+                These languages are applied to a wide range of projects, including full-stack development, desktop applications, 
+                and data visualization.
+            </p>
+        </div>
+
+        <!-- Project Management -->
+        <div class="competency-card">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/project-management.png" alt="Project Management" class="w-8 h-8 mr-2">
+                Project Management
+            </h3>
+            <p>
+                I have experience using tools like GitHub, Trello, Teams, and Discord to collaborate effectively and manage project timelines.
+            </p>
+        </div>
+
+        <!-- Development Experience -->
+        <div class="competency-card">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/cloud-network.png" alt="Development Experience" class="w-8 h-8 mr-2">
+                Development Experience
+            </h3>
+            <p>
+                I work with Docker, React, wxWidgets, JavaFX, and MongoDB for UI design, deployments, and scalable application development.
+            </p>
+        </div>
+
+        <!-- Coding Methodologies -->
+        <div class="competency-card">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/settings.png" alt="Coding Methodologies" class="w-8 h-8 mr-2">
+                Coding Methodologies
+            </h3>
+            <p>
+                I employ clean code principles, write meaningful comments, and practice test-driven development for maintainable and reliable software.
+            </p>
+        </div>
+
+        <!-- Interests -->
+        <div class="competency-card">
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/exclamation-mark.png" alt="Interests" class="w-8 h-8 mr-2">
+                Interests
+            </h3>
+            <p>
+                I’m interested in Machine Learning, Game Development, AI, Blockchain, Operating Systems, and Full Stack Development.
+            </p>
+        </div>
+    </div>
+</section><br>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <h2 class="text-4xl font-bold text-center mb-10">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Project Title Placeholder</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+        </div>
+    </section><br>
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-center py-20">
+        <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+        <p>Feel free to reach out for collaboration or questions.</p>
+        <form class="max-w-lg mx-auto mt-6">
+            <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 rounded bg-gray-800 text-white">
+            <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-gray-800 text-white">
+            <textarea placeholder="Your Message" class="w-full p-3 mb-4 rounded bg-gray-800 text-white"></textarea>
+            <button class="button">Send Message</button>
+        </form>
+    </section><br>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ethan Passino. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("#navbar a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const navbar = document.getElementById("navbar");
+
+        menuToggle.addEventListener("click", () => {
+            navbar.classList.toggle("hidden");
+            navbar.classList.toggle("block");
+        });
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (!navbar.classList.contains("hidden")) {
+                    navbar.classList.add("hidden");
+                    navbar.classList.remove("block");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
