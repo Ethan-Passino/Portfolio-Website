@@ -1,9 +1,1 @@
-# Node modules
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-
-# React build folder (if you're using React with Create React App)
-client/build/
+node_modules
