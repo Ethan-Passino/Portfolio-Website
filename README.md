@@ -22,4 +22,13 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ---
 
 ## 🖼️ Preview
-![Live Website](ethanpassino.com)
+[Live Version](https://ethanpassino.com)
+
+---
+
+## 🤝 Credits
+- **Icons**: Provided by [Icons8](https://icons8.com/) 🎨.
+- **Design Framework**: Built with [TailwindCSS](https://tailwindcss.com/) 🚀.
+- **Development**: Created and maintained by Ethan Passino.
+
+---
