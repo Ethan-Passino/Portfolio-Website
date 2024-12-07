@@ -33,6 +33,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .link-header {
+            color: #ffffff;
+            background: linear-gradient(90deg, #4a90e2, #146ebe, #003d73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .link-header:hover {
+            transform: scale(1.3);        
+        }
     
         /* Navigation Bar */
         nav {
@@ -168,29 +179,62 @@
             line-height: 1.6;
             font-size: 1rem;
         }
+        .dropdown-link {
+        display: block;
+        padding: 10px 20px;
+        color: #ffffff;
+        background-color: #1f2937; /* Slightly darker gray */
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .dropdown-link:hover {
+        background-color: #3b82f6; /* Light blue on hover */
+        color: #ffffff;
+        transform: scale(1.05); /* Subtle scale effect */
+    }
+
+    .dropdown-link:active {
+        background-color: #1d4ed8; /* Darker blue when clicked */
+    }
     </style>
     
     
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="py-4 px-6">
+    <nav class="py-4 px-6 relative">
         <div class="flex justify-between items-center w-full">
             <!-- Name aligned to the left -->
             <a href="#hero" class="text-2xl font-bold flex-shrink-0">Ethan Passino</a>
     
-            <!-- Links aligned to the right -->
+            <!-- Links aligned to the right for larger screens -->
             <ul id="navbar" class="hidden md:flex space-x-6 ml-auto">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#competencies">Technical Competencies</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="hover:text-blue-400">About Me</a></li>
+                <li><a href="#competencies" class="hover:text-blue-400">Technical Competencies</a></li>
+                <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
             </ul>
     
             <!-- Mobile menu toggle -->
-            <button id="menu-toggle" class="block md:hidden bg-blue-600 px-4 py-2 rounded">Menu</button>
+            <button id="menu-toggle" class="block md:hidden bg-blue-600 px-4 py-2 rounded text-white">
+                Menu
+            </button>
+        </div>
+    
+        <!-- Mobile Dropdown Menu -->
+        <div id="dropdown-menu" class="hidden bg-gray-800 absolute top-16 left-4 right-4 rounded-lg shadow-lg">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#about" class="dropdown-link">About Me</a></li>
+                <li><a href="#competencies" class="dropdown-link">Technical Competencies</a></li>
+                <li><a href="#projects" class="dropdown-link">Projects</a></li>
+                <li><a href="#contact" class="dropdown-link">Contact</a></li>
+            </ul>
         </div>
     </nav>
+    
     
     
 
@@ -201,7 +245,7 @@
         <div class="mt-8">
             <a href="#projects" class="button">View My Work</a>
             <a href="https://github.com/Ethan-Passino" target="_blank" class="button ml-4">GitHub</a>
-            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" class="button ml-4">LinkedIn</a>
+            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" class="button ml-4">LinkedIn</a><br><br>
             <a href="https://discord.gg/0deI7V0QFPpXLQJW" target="_blank" class="button ml-4">Discord Server</a>
         </div>
     </header>
@@ -211,16 +255,33 @@
         <img src="Ethan.jpg" alt="Profile" class="rounded-full mx-auto w-48 h-48">
         <h2 class="text-4xl font-bold mt-10">About Me</h2>
         <p class="mt-4 max-w-3xl mx-auto">
-            Welcome to my portfolio! I’m a dedicated software engineer with a passion for creating impactful projects. 
-            My expertise spans full-stack development, backend optimization, and crafting user-friendly interfaces. 
-            From building robust web applications to exploring cutting-edge technologies, I bring creativity and technical proficiency to every challenge.
+            Welcome to my portfolio! My name is Ethan Passino, and I’m a passionate software engineer with a love for learning and creating impactful projects. My journey in computer science began in high school, and it’s been a rewarding adventure ever since.</p>
+        <p class="mt-4 max-w-3xl mx-auto">
+            In my sophomore year, I took AP Computer Science, where I strengthened my skills in Java and built several simple games from scratch. Afterward, I ventured on my own, diving into web development with HTML, CSS, JavaScript, and PHP. One of my early projects was a form-based website. While it wasn’t perfect, it gave me a solid foundation in understanding how websites function and the basics of frontend and backend development.
         </p>
         <p class="mt-4 max-w-3xl mx-auto">
-            My programming journey began in 2016 during a high school computer science class where I first encountered Python. 
-            I quickly became fascinated by the potential of coding and created a variety of projects, from console-based tools 
-            to simple games. The following year, in AP Computer Science, I expanded my skills with Java and built several 
-            games from scratch. Since then, I’ve continued to grow my skills by exploring new languages, frameworks, and technologies, 
-            with a constant passion for creating impactful software.
+            During my senior year of high school, I attended the computer science program at Anthes Career Center. Spending half of each day immersed in programming, I deepened my knowledge of Python by creating a game inspired by a programming book. I also explored C++, gaining basic insights into the language, although memory management was still challenging at the time.
+        </p>
+        <p class="mt-4 max-w-3xl mx-auto">
+            After high school, I enrolled at Purdue University Fort Wayne to pursue a degree in Computer Science. My first year covered familiar ground, especially in Java, so I dedicated extra time to projects like BrickThrower and various Minecraft modifications, which are showcased below. These projects allowed me to apply what I knew while sharpening my skills.
+        </p>
+        <p class="mt-4 max-w-3xl mx-auto">
+            As I progressed in college, my learning expanded significantly:
+
+        </p>
+        <ul class="list-disc list-inside space-y-2 mt-4 max-w-3xl mx-auto">
+            <li>
+                <b>Second Year</b>: I delved into data structures like linked lists, stacks, queues, and binary trees. I also had my first real exposure to C programming, where I gained a deeper understanding of pointers, memory management, and how data is stored in memory.
+            </li>
+            <li>
+                <b>Third Year</b>: This year introduced me to database management and algorithms. I learned SQL thoroughly and explored algorithms such as sorting, searching, and recursion. My Programming Language Design course was particularly eye-opening, as it demystified how compilers work, error-checking processes, and procedural programming paradigms.
+            </li>
+            <li>
+                <b>Senior Year</b>: Now in my final year, I’m applying all I’ve learned to capstone projects and preparing for my career as a software engineer. From developing a Rewinder Batch Trimming & Scheduling System to exploring new technologies, I’m continually growing as both a programmer and a learner.
+            </li>
+        </ul>
+        <p class="mt-4 max-w-3xl mx-auto">
+            Through these experiences, I’ve developed a strong foundation in programming, a curiosity for exploring new technologies, and a commitment to lifelong learning. As I approach graduation, I’m excited to start my professional journey and contribute to the ever-evolving world of technology.
         </p>
     </section><br>
 
@@ -290,26 +351,79 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20">
         <h2 class="text-4xl font-bold text-center mb-10">Projects</h2>
+        <h3 class="text-2xl text-center">Click on Project Names to be taken to their github page!</h3><br>
+
         <div class="grid md:grid-cols-2 gap-8">
             <div>
-                <h3 class="text-2xl font-bold mb-4">Project Title Placeholder</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/BrickThrower" target="_blank">BrickThrower</a>
+                <p>BrickThrower is a Minecraft plugin that lets players throw bricks with a right-click, adding a fun combat and gameplay mechanic. The plugin supports Minecraft versions from 1.8 to 1.20.4, with customizable options for damage and velocity. Developed with performance and compatibility in mind, BrickThrower enhances server gameplay with a simple yet engaging feature.</p>
             </div>
             <div>
-                <img src="https://via.placeholder.com/800" alt="Project Screenshot" class="w-full h-auto">
+                <img src="https://private-user-images.githubusercontent.com/100170266/386817604-73e0d8fa-1957-4d97-aca4-d9280cee5f81.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1OTYzNzUsIm5iZiI6MTczMzU5NjA3NSwicGF0aCI6Ii8xMDAxNzAyNjYvMzg2ODE3NjA0LTczZTBkOGZhLTE5NTctNGQ5Ny1hY2E0LWQ5MjgwY2VlNWY4MS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QxODI3NTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hYWNlY2M0MDEyODVmZDI2Zjc0MjkyNzY1ZDdhZmJjOWUyM2IzNTc0OGQ3NmYzNzA0MmViMzgzM2U4N2Q3YzAwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.gdKFUYIrIaW6CXv4V4Uqkp8p6OzHoKnjiY4iPiCliR8" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/WebDesign-Project" target="_blank">TaskFlow</a>
+                <p>TaskFlow is a gamified project management app designed to help teams organize tasks, track progress, and stay motivated. Built with React, TypeScript, and Node.js, it features task management, real-time updates, and a drag-and-drop interface. Unique gamification elements, like earning points for completed tasks, enhance collaboration and engagement.</p>
+            </div>
+            <div>
+                <iframe
+                src="https://todo-112636408572.us-east1.run.app/"
+                class="w-full h-96 mt-4 rounded-lg"
+                frameborder="0"
+                allowfullscreen
+            ></iframe>
+            </div>
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/seet-lab/Attendance_tracker_system_Fall_2023_Team_1/" target="_blank">Attendance Tracker System</a>
+                <p>Attendance Tracker System is an Android-based app designed to streamline attendance management for educational institutions. Built with Java, it features QR code-based check-ins, detailed analytics, and automated email notifications for seamless administration. The app is highly customizable, supporting course and student management via an intuitive interface.</p>
+            </div>
+            <div>
+                <img src="https://private-user-images.githubusercontent.com/100170266/393544394-6a099371-46de-47b8-9e4b-cf423b13e459.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM2MDE3MTMsIm5iZiI6MTczMzYwMTQxMywicGF0aCI6Ii8xMDAxNzAyNjYvMzkzNTQ0Mzk0LTZhMDk5MzcxLTQ2ZGUtNDdiOC05ZTRiLWNmNDIzYjEzZTQ1OS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QxOTU2NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NmNlZmM3NzI4YjEzOTg0ZmJjMzU1ZDczMDk3OWY2ZDk2YThhYTdkODE5YTJiZWFlYTBjMjNjYWZiNDRhYTI3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.F_JtBgAgGK1b7AH1ELWe9Y5wFlTwmdCgkKYcNHkFDTk" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/Project2_CS232/" target="_blank">Web Crawler</a>
+                <p>Web Crawler is a system that efficiently traverses websites, extracting and organizing data into a Trie structure for rapid lookups. Developed in C with Python scripts for advanced text extraction, the crawler demonstrates effective use of algorithms and data structures for large-scale information retrieval. The plugin supports Minecraft versions from 1.8 to 1.20.4, with customizable options for damage and velocity. Developed with performance and compatibility in mind, BrickThrower enhances server gameplay with a simple yet engaging feature.</p>
+            </div>
+            <div>
+                <img src="https://private-user-images.githubusercontent.com/100170266/393542639-b4abb186-c751-49b7-8407-a86ab8ae9cd6.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1OTkzMjMsIm5iZiI6MTczMzU5OTAyMywicGF0aCI6Ii8xMDAxNzAyNjYvMzkzNTQyNjM5LWI0YWJiMTg2LWM3NTEtNDliNy04NDA3LWE4NmFiOGFlOWNkNi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QxOTE3MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMGZmMTg4OGM5MGRlMmNhMDdmMWJkYWM0YWZjZWFiNTM2ZWY5NDcyNTllM2IzZTdhOGJlNWNiYzc0MTdmZDlkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ev-mAjFeiMk6JiYRKi7mtjloH687fc4J9-HmNRII9OM" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+            
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/CommandAlias" target="_blank">CommandAlias</a>
+                <p>CommandAlias is a lightweight Minecraft BungeeCord plugin that simplifies server commands with custom aliases. Administrators can easily define alternative commands through a configuration file and reload changes instantly without restarting the server. Built for flexibility and ease of use, CommandAlias enhances server management and player accessibility.</p>
+            </div>
+            <div>
+                <img src="https://private-user-images.githubusercontent.com/100170266/384730684-99c8e284-028a-4c01-a739-1af86f8cd441.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1OTcyODQsIm5iZiI6MTczMzU5Njk4NCwicGF0aCI6Ii8xMDAxNzAyNjYvMzg0NzMwNjg0LTk5YzhlMjg0LTAyOGEtNGMwMS1hNzM5LTFhZjg2ZjhjZDQ0MS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QxODQzMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNzUyZDA2ZTNiM2Q4MWRlYzFhMWIyNWRiNzI1NzRlYzZmYmI2ZDRkYTNlMDg4ZmRlODQwMjVkMTVkOGNiN2UxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.xGbisaft7rhR23WULBt-yVyDJL3CYHdQmOXsK1D150M" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/PrefixRequest" target="_blank">PrefixRequest</a>
+                <p>PrefixRequest is a Minecraft plugin that streamlines custom prefix management. With an intuitive GUI, players can request personalized prefixes, and administrators can easily approve or deny them. Designed for Spigot and Paper servers, the plugin ensures efficient server moderation while enhancing player engagement.</p>
+            </div>
+            <div>
+                <img src="https://private-user-images.githubusercontent.com/100170266/393541743-409cb171-6909-40a2-92bc-6efcd2ad0995.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM1OTgxNjEsIm5iZiI6MTczMzU5Nzg2MSwicGF0aCI6Ii8xMDAxNzAyNjYvMzkzNTQxNzQzLTQwOWNiMTcxLTY5MDktNDBhMi05MmJjLTZlZmNkMmFkMDk5NS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwN1QxODU3NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MmM4YTZkODRiNDNkZGU0YTI2MWY4Mzc0ODQwODA5MDlhZGUyOGMzN2ZhMjc0MTM2NzMxNTIyNzg3OGIzNGFmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.uJ1eA7wqK1LoQZenucEPISFl5hz9DQhgsdXNCMiw8rI" alt="Project Screenshot" class="w-full h-auto">
+            </div>
+            <div>
+                <a class="link-header text-2xl font-bold mb-4" href="https://github.com/Ethan-Passino/Dragons" target="_blank">Dragons</a>
+                <p>Dragons is a Python-based text adventure game where players engage in battles with mythical dragons, complete quests, and achieve milestones. Featuring configurable elements such as custom dragons, moves, and storylines, the game offers an immersive and customizable experience. With interactive storytelling and dynamic combat mechanics, Dragons is a demonstration of modular programming and game design.</p>
+            </div>
+            <div>
+                <img src="https://camo.githubusercontent.com/043f23710af7a177110b0d1c2cef9fc89ebf16736e3e792b8fffbd2d337367ee/68747470733a2f2f692e696d6775722e636f6d2f643751765746792e676966" alt="Project Screenshot" class="w-full h-auto">
             </div>
         </div>
     </section><br>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="text-center py-20">
         <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
         <p>Feel free to reach out for collaboration or questions.</p>
-        <form class="max-w-lg mx-auto mt-6">
+        <form class="max-w-lg mx-auto mt-6"
+            action="https://formspree.io/f/xnnqynlz"
+            method="POST">
             <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 rounded bg-gray-800 text-white">
-            <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-gray-800 text-white">
-            <textarea placeholder="Your Message" class="w-full p-3 mb-4 rounded bg-gray-800 text-white"></textarea>
-            <button class="button">Send Message</button>
+            <input name="email" type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-gray-800 text-white">
+            <textarea name="message" placeholder="Your Message" class="w-full p-3 mb-4 rounded bg-gray-800 text-white"></textarea>
+            <button class="button" type="submit">Send Message</button>
         </form>
     </section><br>
 
@@ -321,7 +435,8 @@
     <script>
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll("#navbar a");
-
+    
+        // Highlight active navigation link based on scroll position
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach((section) => {
@@ -337,23 +452,31 @@
                 }
             });
         });
-
+    
+        // Mobile menu toggle
         const menuToggle = document.getElementById("menu-toggle");
-        const navbar = document.getElementById("navbar");
-
+        const dropdownMenu = document.getElementById("dropdown-menu");
+    
         menuToggle.addEventListener("click", () => {
-            navbar.classList.toggle("hidden");
-            navbar.classList.toggle("block");
+            dropdownMenu.classList.toggle("hidden");
         });
-
-        navLinks.forEach((link) => {
+    
+        // Close dropdown menu when a link is clicked
+        const dropdownLinks = document.querySelectorAll("#dropdown-menu a");
+        dropdownLinks.forEach((link) => {
             link.addEventListener("click", () => {
-                if (!navbar.classList.contains("hidden")) {
-                    navbar.classList.add("hidden");
-                    navbar.classList.remove("block");
-                }
+                dropdownMenu.classList.add("hidden");
             });
         });
+    
+        // Close dropdown menu on clicking outside
+        window.addEventListener("click", (e) => {
+            if (!menuToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add("hidden");
+            }
+        });
     </script>
+    
 </body>
 </html>
+
