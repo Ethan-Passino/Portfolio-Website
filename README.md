@@ -1,33 +1,34 @@
-# 🌐 Personal Website of Ethan Passino
+# 🌟 Ethan Passino - Portfolio Website 🌟
 
-Welcome to my personal website repository! This project is a React-based web application that showcases my profile, provides links to my GitHub and Discord, and includes a visitor counter. Built with a focus on simplicity and responsiveness, this site is designed to give visitors a glimpse into who I am and what I’m passionate about.
+Welcome to my personal portfolio website! This project showcases my skills, projects, and technical competencies in a visually appealing, responsive, and modern design. Feel free to explore and connect with me through the provided links! 🚀
 
-## 🖥️ Live Demo
-You can check out the live version of the website [here](https://ethanpassino.com) (https://ethanpassino.com).
+---
 
-## 📋 Project Overview
+## ✨ Features
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices 📱💻.
+- **Dark Mode**: Sleek and professional dark-themed design 🌑.
+- **Technical Competencies**: Highlighting my expertise with interactive cards 🛠️.
+- **Projects Section**: Showcasing some of my best work with detailed descriptions and links 🌐.
+- **Contact Form**: Reach out to me directly via the form or through LinkedIn, GitHub, and Discord 📬.
 
-This project was built as a personal portfolio to highlight my skills, provide easy access to my contact information, and display dynamic content like page views. It uses:
-- **React** for the frontend interface.
-- **Node.js** and **Express** for the backend server.
-- **CSS** for styling, including responsive and interactive design elements.
+---
 
-## 🚀 Features
+## 🛠️ Technologies Used
+- **Frontend**: HTML, CSS, TailwindCSS 🎨
+- **Backend**: Minimal Node.js server for hosting 🌐
+- **Icons**: Icons8 and custom assets ✏️
+- **Design Principles**: Clean UI/UX, gradient backgrounds, and hover animations ✨
 
-- **Profile Picture & Introduction**: A brief introduction and profile picture.
-- **Responsive Design**: Ensures a seamless experience across devices.
-- **Links to Social Profiles**: Buttons that link to my GitHub and Discord server.
-- **Page View Counter**: Displays the number of visitors using a simple counter.
-- **Unique Visitor Counter**: Displays the number of unique visitors on my website, using a counter that will store a cookie in your browser to track if you have viewed the site before.
-- **Smooth Transitions**: Hover effects and animations for enhanced user experience.
+---
 
-## 📂 Project Structure
+## 🖼️ Preview
+[Live Version](https://ethanpassino.com)
 
-The core structure of the project includes the following files:
+---
 
-- **`App.js`**: Main component containing the page layout, profile section, contact links, and view counter.
-- **`App.css`**: Styling for the components, including animations and responsive design elements.
-- **`server.js`**: Backend logic for handling page views (Node.js and Express).
-- **`index.js`**: Entry point that renders the React app.
-- **`reportWebVitals.js`**: Performance tracking script for the app.
-- **`setupTests.js`**: Configuration for testing with Jest and React Testing Library.
+## 🤝 Credits
+- **Icons**: Provided by [Icons8](https://icons8.com/) 🎨.
+- **Design Framework**: Built with [TailwindCSS](https://tailwindcss.com/) 🚀.
+- **Development**: Created and maintained by Ethan Passino.
+
+---
