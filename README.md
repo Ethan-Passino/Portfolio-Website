@@ -22,6 +22,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ---
 
 ## 🖼️ Preview
+[<img alt="alt_text" target="_blank" src="https://github.com/user-attachments/assets/81114c59-c5db-4661-a876-29ef24542025" />](https://ethanpassino.com)
 [Live Version](https://ethanpassino.com)
 
 ---
