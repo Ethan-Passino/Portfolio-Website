@@ -15,7 +15,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 🛠️ Technologies Used
 - **Frontend**: HTML, CSS, TailwindCSS 🎨
-- **Backend**: Minimal Node.js server for hosting 🌐
+- **Backend**: Minimal Node.js server for hosting 🌐 (All the backend does is serve the files and is there if anything else is needed)
 - **Icons**: Icons8 and custom assets ✏️
 - **Design Principles**: Clean UI/UX, gradient backgrounds, and hover animations ✨
 
