@@ -1,6 +1,6 @@
 # 🌟 Ethan Passino - Portfolio Website 🌟
 
-Welcome to my personal portfolio website! This project showcases my skills, projects, and technical competencies in a visually appealing, responsive, and modern design. Feel free to explore and connect with me through the provided links! 🚀
+Welcome to my personal portfolio website! This project showcases my skills, projects, and technical competencies in a visually appealing, responsive, and modern design. Feel free to explore and connect with me through the provided links! I am also open to any job positions that are Software Engineering related! 🚀
 
 ---
 
