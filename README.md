@@ -1,4 +1,5 @@
 # 🌟 Ethan Passino - Portfolio Website 🌟
+[Live Version](https://ethanpassino.com)
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and technical competencies in a visually appealing, responsive, and modern design. Feel free to explore and connect with me through the provided links! I am also open to any job positions that are Software Engineering related! 🚀
 
@@ -23,7 +24,6 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 🖼️ Preview
 [<img alt="alt_text" target="_blank" src="https://github.com/user-attachments/assets/81114c59-c5db-4661-a876-29ef24542025" />](https://ethanpassino.com)
-[Live Version](https://ethanpassino.com)
 
 ---
 
