@@ -7,7 +7,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## ✨ Features
 - **Responsive Design**: Optimized for mobile, tablet, and desktop devices 📱💻.
-- **Dark Mode**: Sleek and professional dark-themed design 🌑.
+- **Dark Theme**: Sleek and professional dark-themed design 🌑.
 - **Technical Competencies**: Highlighting my expertise with interactive cards 🛠️.
 - **Projects Section**: Showcasing some of my best work with detailed descriptions and links 🌐.
 - **Contact Form**: Reach out to me directly via the form or through LinkedIn, GitHub, and Discord 📬.
