@@ -135,6 +135,20 @@
         align-items: center; /* Center horizontally */
         text-align: center; /* Align text to the center */
         margin: 0 auto; /* Ensure content stays in the middle */
+        padding-bottom: 2rem !important;
+      }
+
+      #about {
+        padding-top: 3rem !important;
+      }
+
+      #competencies {
+        margin-bottom: 1rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      #experience {
+        padding-top: 3rem !important;
       }
 
       .hero-layout {
