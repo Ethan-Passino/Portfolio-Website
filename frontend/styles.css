@@ -471,6 +471,206 @@
       }
 
       /* Experience Cards */
+      #experience > .experience-timeline {
+        display: none;
+      }
+
+      .experience-modern {
+        display: grid;
+        gap: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .modern-company {
+        overflow: hidden;
+        background: rgba(31, 41, 55, 0.88);
+        border: 1px solid rgba(74, 144, 226, 0.24);
+        border-radius: 1rem;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+      }
+
+      .modern-company-header {
+        display: grid;
+        grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+        gap: 1rem;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        background: linear-gradient(110deg, rgba(3, 29, 64, 0.8), rgba(31, 41, 55, 0.4));
+      }
+
+      .modern-company-header .experience-logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      .modern-company-header h3 {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      .modern-company-header p {
+        margin-top: 0.2rem;
+        color: #93c5fd;
+        font-size: 0.85rem;
+      }
+
+      .modern-company-dates {
+        color: #9ca3af;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+
+      .modern-role-list {
+        border-top: 1px solid rgba(156, 163, 175, 0.18);
+      }
+
+      .modern-role {
+        border-bottom: 1px solid rgba(156, 163, 175, 0.16);
+      }
+
+      .modern-role:last-child {
+        border-bottom: 0;
+      }
+
+      .modern-role summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        list-style: none;
+        transition: background-color 0.25s ease;
+      }
+
+      .modern-role summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .modern-role summary:hover {
+        background: rgba(37, 99, 235, 0.12);
+      }
+
+      .modern-role-title {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        min-width: 0;
+      }
+
+      .modern-role-title strong {
+        color: #f9fafb;
+        font-size: 1rem;
+      }
+
+      .modern-role-title small {
+        color: #93c5fd;
+        font-size: 0.8rem;
+      }
+
+      .modern-role summary > i {
+        flex: 0 0 auto;
+        color: #60a5fa;
+        transition: transform 0.25s ease;
+      }
+
+      .modern-role[open] summary > i {
+        transform: rotate(45deg);
+      }
+
+      .modern-role-content {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+        animation: role-reveal 0.25s ease;
+      }
+
+      .modern-role-content ul {
+        margin: 0;
+        padding-left: 1.25rem;
+        color: #c4cbd5;
+        line-height: 1.6;
+      }
+
+      .modern-role-content li + li {
+        margin-top: 0.4rem;
+      }
+
+      .modern-role-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid rgba(156, 163, 175, 0.16);
+      }
+
+      .modern-role-tags,
+      .modern-role-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        align-items: center;
+      }
+
+      .modern-role-tags span {
+        padding: 0.3rem 0.55rem;
+        color: #dbeafe;
+        background: rgba(37, 99, 235, 0.2);
+        border: 1px solid rgba(96, 165, 250, 0.22);
+        border-radius: 9999px;
+        font-size: 0.72rem;
+      }
+
+      .modern-role-metrics span {
+        color: #9ca3af;
+        font-size: 0.75rem;
+      }
+
+      .modern-role-metrics strong {
+        margin-right: 0.2rem;
+        color: #60a5fa;
+        font-size: 0.95rem;
+      }
+
+      @keyframes role-reveal {
+        from { opacity: 0; transform: translateY(-4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 640px) {
+        .modern-company-header {
+          grid-template-columns: 3rem minmax(0, 1fr);
+          padding: 1rem;
+        }
+
+        .modern-company-header .experience-logo {
+          width: 3rem;
+          height: 3rem;
+        }
+
+        .modern-company-dates {
+          grid-column: 2;
+          font-size: 0.75rem;
+        }
+
+        .modern-role summary {
+          padding: 0.9rem 1rem;
+        }
+
+        .modern-role-title {
+          display: grid;
+          gap: 0.2rem;
+        }
+
+        .modern-role-content {
+          padding: 0 1rem 1rem;
+        }
+      }
+
       .experience-timeline {
         position: relative;
       }
@@ -596,6 +796,52 @@
 
       .experience-card p {
         line-height: 1.6;
+      }
+
+      .experience-details {
+        margin-top: 1rem;
+      }
+
+      .experience-details summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.7rem 0.85rem;
+        color: #bfdbfe;
+        background: rgba(3, 29, 64, 0.58);
+        border: 1px solid rgba(96, 165, 250, 0.2);
+        border-radius: 0.6rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 600;
+        list-style: none;
+        transition: background-color 0.25s ease, border-color 0.25s ease;
+      }
+
+      .experience-details summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .experience-details summary:hover {
+        background: rgba(37, 99, 235, 0.22);
+        border-color: rgba(96, 165, 250, 0.55);
+      }
+
+      .experience-details summary i {
+        transition: transform 0.25s ease;
+      }
+
+      .experience-details summary em {
+        margin-left: 0.45rem;
+        color: #9ca3af;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .experience-details[open] summary i {
+        transform: rotate(180deg);
       }
 
       @media (max-width: 640px) {
