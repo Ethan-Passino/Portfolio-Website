@@ -1112,32 +1112,61 @@
     <br />
 
     <!-- Contact Section -->
-    <section id="contact" class="text-center py-20">
-      <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
-      <p>Feel free to reach out for collaboration or questions.</p>
-      <form
-        class="max-w-lg mx-auto mt-6"
-        action="https://formspree.io/f/xnnqynlz"
-        method="POST"
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        ></textarea>
-        <button class="button" type="submit">Send Message</button>
-      </form>
+    <section id="contact" class="py-20">
+      <div class="contact-heading">
+        <div>
+          <p class="contact-kicker">Let&apos;s connect</p>
+          <h2>Have a project or opportunity in mind?</h2>
+        </div>
+        <p>
+          I&apos;m always interested in thoughtful software, useful products, and
+          conversations about building better systems.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <span class="contact-intro-label">Start a conversation</span>
+          <h3>Let&apos;s build something useful.</h3>
+          <p>
+            Whether you want to discuss a software opportunity, collaborate on
+            a project, or talk through an idea, send a message and I&apos;ll get
+            back to you.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://github.com/Ethan-Passino" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i><span>GitHub<small>View my code</small></span>
+            </a>
+            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i><span>LinkedIn<small>Connect professionally</small></span>
+            </a>
+            <a href="https://discord.gg/0deI7V0QFPpXLQJW" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-discord"></i><span>Discord<small>Join the conversation</small></span>
+            </a>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xnnqynlz"
+          method="POST"
+        >
+          <div class="contact-form-header">
+            <h3>Send a message</h3>
+            <span><i class="fas fa-paper-plane"></i></span>
+          </div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
+          <label for="contact-subject">Subject</label>
+          <input id="contact-subject" name="subject" type="text" placeholder="What would you like to discuss?" />
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Tell me a little about it..." required></textarea>
+          <button class="contact-submit" type="submit">Send message <i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
     </section>
     <br />
 
