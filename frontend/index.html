@@ -23,51 +23,43 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="py-4 px-6">
-      <div class="flex justify-between items-center w-full">
-        <!-- Name aligned to the left -->
-        <a href="#hero" class="text-2xl font-bold flex-shrink-0"
-          >Ethan Passino</a
-        >
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-shell">
+        <a href="#hero" class="nav-brand" aria-label="Ethan Passino, back to top">
+          <span class="nav-monogram" aria-hidden="true">EP</span>
+          <span class="nav-identity">
+            <span>Ethan Passino</span>
+            <small>Software Engineer</small>
+          </span>
+        </a>
 
-        <!-- Links aligned to the right for larger screens -->
-        <ul id="navbar" class="hidden md:flex space-x-6 ml-auto">
-          <li><a href="#about" class="hover:text-blue-400">About Me</a></li>
-          <li>
-            <a href="#competencies" class="hover:text-blue-400"
-              >Technical Competencies</a
-            >
-          </li>
-          <li><a href="#experience" class="hover:text-blue-400">Experience</a></li>
-          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        <ul id="navbar" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#competencies">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Mobile menu toggle -->
         <button
           id="menu-toggle"
-          class="block md:hidden bg-blue-600 px-4 py-2 rounded text-white"
+          type="button"
+          aria-expanded="false"
+          aria-controls="dropdown-menu"
         >
-          Menu
+          <i class="fas fa-bars" aria-hidden="true"></i>
+          <span>Menu</span>
         </button>
-      </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div
-        id="dropdown-menu"
-        class="hidden bg-gray-800 absolute top-16 left-4 right-4 rounded-lg shadow-lg"
-      >
-        <ul class="flex flex-col space-y-2 p-4">
-          <li><a href="#about" class="dropdown-link">About Me</a></li>
-          <li>
-            <a href="#competencies" class="dropdown-link"
-              >Technical Competencies</a
-            >
-          </li>
-          <li><a href="#experience" class="dropdown-link">Experience</a></li>
-          <li><a href="#projects" class="dropdown-link">Projects</a></li>
-          <li><a href="#contact" class="dropdown-link">Contact</a></li>
-        </ul>
+        <div id="dropdown-menu" class="nav-drawer hidden">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#competencies">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -1450,24 +1442,36 @@
 
     <script>
       const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("#navbar a");
+      const navLinks = document.querySelectorAll("#navbar a, #dropdown-menu a");
 
-      // Highlight active navigation link based on scroll position
-      window.addEventListener("scroll", () => {
+      // Highlight the section currently in view, including Contact at page end.
+      const updateActiveNav = () => {
         let current = "";
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (pageYOffset >= sectionTop) {
+          const sectionTop = section.offsetTop - 120;
+          if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id");
           }
         });
+
+        if (
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 4
+        ) {
+          current = "contact";
+        }
+
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href").includes(current)) {
+          if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
           }
         });
-      });
+      };
+
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      window.addEventListener("resize", updateActiveNav);
+      updateActiveNav();
 
       // Mobile menu toggle
       const menuToggle = document.getElementById("menu-toggle");
@@ -1475,6 +1479,10 @@
 
       menuToggle.addEventListener("click", () => {
         dropdownMenu.classList.toggle("hidden");
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(!dropdownMenu.classList.contains("hidden"))
+        );
       });
 
       // Close dropdown menu when a link is clicked
@@ -1482,6 +1490,7 @@
       dropdownLinks.forEach((link) => {
         link.addEventListener("click", () => {
           dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
         });
       });
 
@@ -1492,6 +1501,15 @@
           !dropdownMenu.contains(e.target)
         ) {
           dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !dropdownMenu.classList.contains("hidden")) {
+          dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.focus();
         }
       });
     </script>

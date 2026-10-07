@@ -6,13 +6,33 @@
       }
 
       body {
-        background: linear-gradient(
-          135deg,
-          #0d1a36,
-          #041c3c,
-          #020817
-        ); /* Blue gradient */
+        position: relative;
+        min-height: 100vh;
+        isolation: isolate;
+        background:
+          radial-gradient(circle at 14% -8%, rgba(37, 99, 235, 0.28), transparent 32rem),
+          radial-gradient(circle at 88% 24%, rgba(14, 116, 144, 0.16), transparent 36rem),
+          radial-gradient(circle at 52% 104%, rgba(30, 64, 175, 0.16), transparent 36rem),
+          linear-gradient(155deg, #081a36 0%, #041126 42%, #020817 100%);
         color: #b0b0b0; /* Gray text */
+      }
+
+      body::before {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(147, 197, 253, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(147, 197, 253, 0.045) 1px, transparent 1px);
+        background-size: 5rem 5rem;
+        opacity: 0.65;
+      }
+
+      body > * {
+        position: relative;
+        z-index: 1;
       }
 
       section {
@@ -47,67 +67,153 @@
       }
 
       /* Navigation Bar */
-      nav {
-        background: rgba(0, 0, 0, 0.8);
+      .site-nav {
+        background: rgba(2, 8, 23, 0.78);
         position: sticky;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 50;
-        backdrop-filter: blur(10px);
-        display: flex; /* Enable flexbox */
-        align-items: center; /* Center items vertically */
-        justify-content: space-between; /* Name on the left, links on the right */
-        height: 60px; /* Set a consistent height for the navbar */
-        padding: 0 20px; /* Add horizontal padding */
+        padding: 0.8rem 1.25rem;
+        border-bottom: 1px solid rgba(96, 165, 250, 0.16);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
       }
 
-      nav ul {
-        display: flex; /* Align navigation links in a row */
-        align-items: center; /* Center them vertically */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        list-style: none; /* Remove bullet points */
+      .nav-shell {
+        position: relative;
+        display: flex;
+        max-width: 1200px;
+        min-height: 2.8rem;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
       }
 
-      nav a {
+      .nav-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
         color: #ffffff;
         text-decoration: none;
-        padding: 0 15px; /* Add spacing around links */
-        font-size: 1rem;
-        transition: color 0.3s ease;
       }
 
-      nav a.active {
-        text-decoration: underline;
+      .nav-monogram {
+        display: grid;
+        width: 2.45rem;
+        height: 2.45rem;
+        place-items: center;
+        border: 1px solid rgba(147, 197, 253, 0.55);
+        border-radius: 0.7rem;
+        background: linear-gradient(135deg, #1d4ed8, #0b2a58);
+        color: #eff6ff;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
       }
 
-      nav a:hover {
-        color: #4a90e2;
+      .nav-identity {
+        display: grid;
+        gap: 0.08rem;
+        color: #f8fafc;
+        font-size: 0.94rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .nav-identity small {
+        color: #93c5fd;
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .nav-links,
+      .nav-drawer ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links {
+        gap: 0.2rem;
+        padding: 0.25rem;
+        border: 1px solid rgba(96, 165, 250, 0.18);
+        border-radius: 0.8rem;
+        background: rgba(15, 23, 42, 0.52);
+      }
+
+      .nav-links a,
+      .nav-drawer a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.2rem;
+        padding: 0.4rem 0.72rem;
+        border-radius: 0.56rem;
+        color: #cbd5e1;
+        font-size: 0.86rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active,
+      .nav-drawer a:hover,
+      .nav-drawer a.active {
+        background: rgba(59, 130, 246, 0.18);
+        color: #eff6ff;
       }
 
       #menu-toggle {
-        display: block; /* Show the menu button */
-        padding: 10px 20px;
-        background: #146ebe;
-        color: white;
-        border-radius: 5px;
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2.45rem;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid rgba(96, 165, 250, 0.3);
+        border-radius: 0.65rem;
+        background: rgba(15, 23, 42, 0.8);
+        color: #eff6ff;
         cursor: pointer;
-        text-align: center;
+        font-size: 0.82rem;
+        font-weight: 700;
       }
 
-      @media (min-width: 768px) {
+      .nav-drawer {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        width: min(20rem, calc(100vw - 2.5rem));
+        padding: 0.45rem;
+        border: 1px solid rgba(96, 165, 250, 0.24);
+        border-radius: 0.85rem;
+        background: rgba(15, 23, 42, 0.97);
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+      }
+
+      .nav-drawer ul {
+        display: grid;
+        gap: 0.15rem;
+      }
+
+      .nav-drawer a {
+        width: 100%;
+        padding: 0.65rem 0.8rem;
+      }
+
+      @media (max-width: 767px) {
         #menu-toggle {
-          display: none; /* Hide the menu button on larger screens */
+          display: inline-flex;
         }
-      }
 
-      .menu {
-        display: none; /* Hidden by default */
-      }
-
-      .menu.active {
-        display: block;
+        .nav-links {
+          display: none;
+        }
       }
 
       /* Buttons */
