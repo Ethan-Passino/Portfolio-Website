@@ -15,209 +15,7 @@
     <meta name="robots" content="index, follow" />
     <title>Ethan Passino - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Global Styling */
-      html {
-        scroll-behavior: smooth;
-        font-family: "Rubik", sans-serif;
-      }
-
-      body {
-        background: linear-gradient(
-          135deg,
-          #0d1a36,
-          #041c3c,
-          #020817
-        ); /* Blue gradient */
-        color: #b0b0b0; /* Gray text */
-      }
-
-      section {
-        scroll-margin-top: 80px;
-        background: rgba(0, 0, 0, 0.8); /* Dark background */
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        margin: 0 auto;
-        max-width: 1200px; /* Center content */
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: #ffffff;
-        background: linear-gradient(90deg, #4a90e2, #146ebe, #003d73);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .link-header {
-        display: inline-block; /* Ensure scaling works */
-        background: linear-gradient(90deg, #4a90e2, #146ebe, #003d73);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .link-header:hover {
-        transform: scale(1.1);
-      }
-
-      /* Navigation Bar */
-      nav {
-        background: rgba(0, 0, 0, 0.8);
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-        backdrop-filter: blur(10px);
-        display: flex; /* Enable flexbox */
-        align-items: center; /* Center items vertically */
-        justify-content: space-between; /* Name on the left, links on the right */
-        height: 60px; /* Set a consistent height for the navbar */
-        padding: 0 20px; /* Add horizontal padding */
-      }
-
-      nav ul {
-        display: flex; /* Align navigation links in a row */
-        align-items: center; /* Center them vertically */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        list-style: none; /* Remove bullet points */
-      }
-
-      nav a {
-        color: #ffffff;
-        text-decoration: none;
-        padding: 0 15px; /* Add spacing around links */
-        font-size: 1rem;
-        transition: color 0.3s ease;
-      }
-
-      nav a.active {
-        text-decoration: underline;
-      }
-
-      nav a:hover {
-        color: #4a90e2;
-      }
-
-      #menu-toggle {
-        display: block; /* Show the menu button */
-        padding: 10px 20px;
-        background: #146ebe;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-      }
-
-      @media (min-width: 768px) {
-        #menu-toggle {
-          display: none; /* Hide the menu button on larger screens */
-        }
-      }
-
-      .menu {
-        display: none; /* Hidden by default */
-      }
-
-      .menu.active {
-        display: block;
-      }
-
-      /* Buttons */
-      .button {
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 50px;
-        background: linear-gradient(90deg, #4a90e2, #146ebe);
-        color: white;
-        text-align: center;
-        font-weight: bold;
-        transition: background 0.3s ease, transform 0.3s ease;
-      }
-
-      .button:hover {
-        background: linear-gradient(90deg, #146ebe, #4a90e2);
-        transform: scale(1.05);
-      }
-
-      /* Hero Section */
-      #hero {
-        display: flex; /* Enable flexbox */
-        flex-direction: column; /* Stack content vertically */
-        justify-content: center; /* Center vertically */
-        align-items: center; /* Center horizontally */
-        text-align: center; /* Align text to the center */
-        margin: 0 auto; /* Ensure content stays in the middle */
-      }
-
-      /* Footer */
-      footer {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        color: #ffffff;
-      }
-
-      /* Technical Competency Cards */
-      .competency-card {
-        width: 100%;
-        min-height: 250px;
-        padding: 2rem;
-        background-color: #1f2937;
-        color: #b0b0b0;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .competency-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .competency-card h3 {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-
-      .competency-card h3 img {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.5rem;
-      }
-
-      .competency-card p {
-        line-height: 1.6;
-        font-size: 1rem;
-      }
-      .dropdown-link {
-        display: block;
-        padding: 10px 20px;
-        color: #ffffff;
-        background-color: #1f2937; /* Slightly darker gray */
-        border-radius: 5px;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-
-      .dropdown-link:hover {
-        background-color: #3b82f6; /* Light blue on hover */
-        color: #ffffff;
-        transform: scale(1.05); /* Subtle scale effect */
-      }
-
-      .dropdown-link:active {
-        background-color: #1d4ed8; /* Darker blue when clicked */
-      }
-    </style>
+        <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -225,147 +23,223 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="py-4 px-6">
-      <div class="flex justify-between items-center w-full">
-        <!-- Name aligned to the left -->
-        <a href="#hero" class="text-2xl font-bold flex-shrink-0"
-          >Ethan Passino</a
-        >
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-shell">
+        <a href="#hero" class="nav-brand" aria-label="Ethan Passino, back to top">
+          <span class="nav-monogram" aria-hidden="true">EP</span>
+          <span class="nav-identity">
+            <span>Ethan Passino</span>
+            <small>Software Engineer</small>
+          </span>
+        </a>
 
-        <!-- Links aligned to the right for larger screens -->
-        <ul id="navbar" class="hidden md:flex space-x-6 ml-auto">
-          <li><a href="#about" class="hover:text-blue-400">About Me</a></li>
-          <li>
-            <a href="#competencies" class="hover:text-blue-400"
-              >Technical Competencies</a
-            >
-          </li>
-          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        <ul id="navbar" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#competencies">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Mobile menu toggle -->
         <button
           id="menu-toggle"
-          class="block md:hidden bg-blue-600 px-4 py-2 rounded text-white"
+          type="button"
+          aria-expanded="false"
+          aria-controls="dropdown-menu"
         >
-          Menu
+          <i class="fas fa-bars" aria-hidden="true"></i>
+          <span>Menu</span>
         </button>
-      </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div
-        id="dropdown-menu"
-        class="hidden bg-gray-800 absolute top-16 left-4 right-4 rounded-lg shadow-lg"
-      >
-        <ul class="flex flex-col space-y-2 p-4">
-          <li><a href="#about" class="dropdown-link">About Me</a></li>
-          <li>
-            <a href="#competencies" class="dropdown-link"
-              >Technical Competencies</a
-            >
-          </li>
-          <li><a href="#projects" class="dropdown-link">Projects</a></li>
-          <li><a href="#contact" class="dropdown-link">Contact</a></li>
-        </ul>
+        <div id="dropdown-menu" class="nav-drawer hidden">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#competencies">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="hero" class="py-20 mt-16 container">
-      <h1 class="text-6xl font-extrabold">Ethan Passino</h1>
-      <p class="mt-4 text-lg">
-        Software Engineer | Full Stack Developer | Technology Enthusiast
-      </p>
-      <div class="mt-8 flex flex-col items-center gap-4">
-        <!-- Social Icons Row -->
-        <div class="flex justify-center gap-6 text-2xl">
-          <a
-            href="https://github.com/Ethan-Passino"
-            target="_blank"
-            aria-label="GitHub"
-            title="GitHub"
-            class="hover:text-gray-400"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/ethan-passino-65a08b337"
-            target="_blank"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-            class="hover:text-blue-400"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://discord.gg/0deI7V0QFPpXLQJW"
-            target="_blank"
-            aria-label="Discord Server"
-            title="Join My Discord Server"
-            class="hover:text-indigo-400"
-          >
-            <i class="fab fa-discord"></i>
-          </a>
-        </div>
-        <!-- Primary CTA -->
-        <a
-          href="#projects"
-          class="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-        >
-          <i class="fas fa-folder-open mr-2"></i> View My Work
-        </a>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="hero-kicker">Software engineer &middot; Full-stack development</p>
+          <h1>Ethan Passino</h1>
+          <h2>Building practical software for real workflows.</h2>
+          <p class="hero-summary">
+            I build thoughtful interfaces, reliable backend services, and
+            data-driven features with React, TypeScript, and Node.js.
+          </p>
 
-        <!-- Secondary CTA -->
-        <a
-          href="resume.pdf"
-          download
-          class="px-5 py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition"
-        >
-          <i class="fas fa-file-alt mr-2"></i> Download Resume
-        </a>
+          <div class="hero-actions">
+            <a href="#projects" class="hero-button hero-button-primary">
+              <i class="fas fa-folder-open"></i> View my work
+            </a>
+            <a href="resume.pdf" download class="hero-button hero-button-secondary">
+              <i class="fas fa-file-arrow-down"></i> Download resume
+            </a>
+          </div>
+
+          <div class="hero-socials" aria-label="Social links">
+            <a href="https://github.com/Ethan-Passino" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://discord.gg/0deI7V0QFPpXLQJW" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-discord"></i> Discord
+            </a>
+          </div>
+        </div>
+
       </div>
     </header>
 
     <!-- About Me Section -->
     <section id="about" class="py-20 text-center">
-      <img
-        src="Ethan.jpg?v=20261007"
-        alt="Profile"
-        class="rounded-full mx-auto w-48 h-48 object-cover object-[50%_20%]"
-      />
-      <h2 class="text-4xl font-bold mt-10">About Me</h2>
-      <p class="mt-4 max-w-3xl mx-auto">
-        Hi, I’m <strong>Ethan Passino</strong> — a passionate and driven
-        <strong>software engineer</strong> with a deep love for building
-        practical, impactful applications.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        My journey started in high school with Python and Java, where I built
-        small games and experimented with web development. Since then, I’ve
-        grown into a full-stack developer with experience in
-        <strong>React</strong>, <strong>Node.js</strong>,
-        <strong>MongoDB</strong>, and <strong>C++</strong>.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        I recently earned my
-        <strong
-          >Computer Science degree from Purdue University Fort Wayne</strong
-        >, where I focused on data structures, algorithms, system design, and
-        real-world projects like a
-        <em>Rewinder Batch Trimming & Scheduling System</em> for a manufacturing
-        company.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        Whether it's creating polished user interfaces or optimizing backend
-        systems, I love solving problems and bringing ideas to life. I’m now
-        actively seeking full-time software engineering opportunities.
-      </p>
+      <div class="about-layout text-left">
+        <div class="about-portrait">
+          <img
+            src="Ethan.jpg?v=20261007"
+            alt="Portrait of Ethan Passino"
+            class="rounded-full object-cover object-[50%_20%]"
+          />
+          <span class="about-portrait-label">Software Engineer</span>
+        </div>
+
+        <div class="about-content">
+          <p class="about-kicker">A little about me</p>
+          <h2>Building software that makes complex work feel simple.</h2>
+          <p class="about-lead">
+            Hi, I’m <strong>Ethan Passino</strong>—a software engineer focused
+            on practical full-stack applications, thoughtful user experiences,
+            and reliable systems.
+          </p>
+          <p>
+            With over a year of professional experience, I’ve worked across
+            React, TypeScript, Node.js, data migrations, backend services, and
+            automated testing. I enjoy taking an ambiguous problem and turning
+            it into a clear workflow that people can use with confidence.
+          </p>
+
+          <div class="about-facts" aria-label="Professional highlights">
+            <div class="about-fact">
+              <strong>1+ year</strong>
+              <span>Professional software experience</span>
+            </div>
+            <div class="about-fact">
+              <strong>Full stack</strong>
+              <span>Frontend, backend, and data work</span>
+            </div>
+            <div class="about-fact">
+              <strong>CS graduate</strong>
+              <span>Purdue University Fort Wayne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
     <br />
 
     <!-- Technical Competencies Section -->
     <section id="competencies" class="mb-16">
+      <div class="competencies-heading">
+        <div>
+          <p class="competencies-kicker">How I build</p>
+          <h2>Technical Competencies</h2>
+        </div>
+        <p>
+          A practical toolkit for building interfaces, services, and data-driven
+          workflows from end to end.
+        </p>
+      </div>
+
+      <div class="competencies-layout">
+        <aside class="competencies-profile">
+          <span class="competencies-profile-label">Engineering focus</span>
+          <h3>From interface to data layer.</h3>
+          <p>
+            I work across the stack to turn complicated requirements into
+            clear, maintainable software. My strongest work sits at the
+            intersection of thoughtful UI, reliable backend behavior, and
+            confidence-building tests.
+          </p>
+          <div class="competencies-focus-list">
+            <span><i class="fas fa-layer-group"></i> Full-stack product work</span>
+            <span><i class="fas fa-diagram-project"></i> Workflow design</span>
+            <span><i class="fas fa-database"></i> Data and migrations</span>
+          </div>
+        </aside>
+
+        <div class="skills-matrix">
+          <article class="skill-group">
+            <div class="skill-group-heading">
+              <span class="skill-group-icon"><i class="fas fa-code"></i></span>
+              <div>
+                <h3>Languages</h3>
+                <p>Building blocks I use across projects</p>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>TypeScript</span><span>JavaScript</span><span>C++</span>
+              <span>C#</span><span>Python</span><span>Java</span>
+              <span>SQL</span><span>HTML</span><span>CSS</span>
+            </div>
+          </article>
+
+          <article class="skill-group">
+            <div class="skill-group-heading">
+              <span class="skill-group-icon"><i class="fas fa-cubes"></i></span>
+              <div>
+                <h3>Application development</h3>
+                <p>Frameworks for user-facing software</p>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>React</span><span>React Flow</span><span>Node.js</span>
+              <span>Express</span><span>MongoDB</span><span>Mongoose</span>
+              <span>WPF</span><span>JavaFX</span>
+            </div>
+          </article>
+
+          <article class="skill-group">
+            <div class="skill-group-heading">
+              <span class="skill-group-icon"><i class="fas fa-shield-halved"></i></span>
+              <div>
+                <h3>Quality and data</h3>
+                <p>Making systems dependable and easier to evolve</p>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>Unit testing</span><span>Playwright</span>
+              <span>Data migrations</span><span>Backfills</span>
+              <span>Validation</span><span>Data quality</span>
+            </div>
+          </article>
+
+          <article class="skill-group">
+            <div class="skill-group-heading">
+              <span class="skill-group-icon"><i class="fas fa-arrows-rotate"></i></span>
+              <div>
+                <h3>Delivery and collaboration</h3>
+                <p>Keeping work organized from idea to release</p>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>Docker</span>
+              <span>Jira</span><span>Trello</span><span>Agile delivery</span>
+              <span>Code review</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
       <h2 class="text-3xl font-bold text-center mb-10">
         Technical Competencies
       </h2>
@@ -457,516 +331,534 @@
     </section>
     <br />
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20">
-      <h2 class="text-4xl font-bold text-center mb-10 leading-relaxed">
-        Projects
-      </h2>
-      <h3 class="text-2xl text-center">
-        Click on Project Names to be taken to their github page!
-      </h3>
-      <br />
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+      <div class="section-heading section-heading-experience">
+        <div>
+          <p class="section-kicker">Career path</p>
+          <h2>Experience</h2>
+        </div>
+        <p>Software engineering, product development, and leadership experience.</p>
+      </div>
+      <h2 class="text-4xl font-bold text-center mb-4">Experience</h2>
+      <p class="text-center max-w-3xl mx-auto mb-10">
+        A snapshot of the roles where I have built software, improved workflows,
+        and developed leadership experience.
+      </p>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Personal Finance App -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold"
-            href="https://github.com/Ethan-Passino/PersonalFinanceApp"
-            target="_blank"
-            >Personal Finance App</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Dec 2024 - Current</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >C#</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Desktop Application</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Finance Management</span
-            >
+      <div class="experience-modern">
+        <div class="modern-company">
+          <div class="modern-company-header">
+            <div class="experience-logo current" aria-label="Juvare">
+              <img src="juvare-favicon.png" alt="Juvare logo" class="site-favicon" />
+            </div>
+            <div>
+              <h3>Juvare</h3>
+              <p>Enterprise software development</p>
+            </div>
+            <span class="modern-company-dates">2025&ndash;Present</span>
           </div>
-          <p>
-            The Personal Finance App is a C# desktop application designed to
-            help users take control of their financial goals. It features robust
-            tools for budgeting, tracking expenses, and generating detailed
-            reports. With an intuitive interface, the app provides insights into
-            spending habits and helps users make informed decisions about their
-            finances.
-          </p>
-        </div>
-        <div>
-          <img
-            src="personalfinance.gif"
-            alt="Personal Finance App Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
 
-        <!-- NodeChat -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/NodeChat"
-            target="_blank"
-            >NodeChat</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Jan 2025 - Feb 2025</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >React</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >JavaScript</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Chat Room</span
-            >
+          <div class="modern-role-list">
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title">
+                  <strong>Junior Software Engineer</strong>
+                  <small>July 2025 &ndash; Present</small>
+                </span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Delivered user-facing enterprise workflows, including record creation and editing, validation, history views, responsive layouts, and accessibility improvements.</li>
+                  <li>Implemented data migrations and backfill processes across legacy and current data models, including validation, logging, and pre-release testing.</li>
+                  <li>Built data-quality and administration features including seed data, deduplication, import/export workflows, and role-based access and navigation.</li>
+                  <li>Expanded automated unit and end-to-end testing across these features, increasing unit-test coverage by 30% and Playwright coverage by 15%.</li>
+                </ul>
+                <div class="modern-role-footer">
+                  <div class="modern-role-tags"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Playwright</span></div>
+                  <div class="modern-role-metrics"><span><strong>30%</strong> unit coverage increase</span><span><strong>15%</strong> end-to-end coverage increase</span></div>
+                </div>
+              </div>
+            </details>
+
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title">
+                  <strong>Full Stack Developer Intern</strong>
+                  <small>May 2025 &ndash; July 2025</small>
+                </span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Built an intuitive drag-and-drop workflow builder with React, TypeScript, Node.js, and React Flow, enabling non-developers to configure processes that previously required developer involvement.</li>
+                  <li>Developed reusable workflow components, connected the interface to backend services, and added automated tests for reliable end-to-end behavior.</li>
+                </ul>
+                <div class="modern-role-footer">
+                  <div class="modern-role-tags"><span>React</span><span>TypeScript</span><span>Node.js</span><span>React Flow</span></div>
+                  <div class="modern-role-metrics"><span><strong>1</strong> workflow builder delivered</span><span><strong>4</strong> core technologies</span></div>
+                </div>
+              </div>
+            </details>
           </div>
-          <p>
-            NodeChat is a real-time web-based chat app built with Node.js,
-            React, and MongoDB. It offers secure messaging, a modern UI, and
-            smooth user interactions through WebSocket technology.
-          </p>
-        </div>
-        <div>
-          <iframe
-            src="https://chat.ethanpassino.com"
-            class="w-full h-96 mt-4 rounded-lg"
-            allowfullscreen
-          ></iframe>
         </div>
 
-        <!-- BrickThrower -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold"
-            href="https://github.com/Ethan-Passino/BrickThrower"
-            target="_blank"
-            >BrickThrower</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Jan 2021 - Jan 2024</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Java</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Minecraft Plugin</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Game Development</span
-            >
+        <div class="modern-company">
+          <div class="modern-company-header">
+            <div class="experience-logo" aria-label="Pizza Hut">
+              <img src="pizzahut-favicon.ico" alt="Pizza Hut logo" class="site-favicon" />
+            </div>
+            <div>
+              <h3>Pizza Hut</h3>
+              <p>Restaurant operations</p>
+            </div>
+            <span class="modern-company-dates">May 2022&ndash;July 2025</span>
           </div>
-          <p>
-            BrickThrower is a Minecraft plugin that lets players throw bricks
-            with a right-click, adding a fun combat and gameplay mechanic. The
-            plugin supports Minecraft versions from 1.8 to 1.20.4, with
-            customizable options for damage and velocity.
-          </p>
-        </div>
-        <div>
-          <img
-            src="brickthrower.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
-        <!-- TaskFlow -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/TaskFlow"
-            target="_blank"
-            >TaskFlow</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: August 2024 - Dec 2024</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >React</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >TypeScript</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Gamification</span
-            >
-          </div>
-          <p>
-            TaskFlow is a gamified project management app designed to help teams
-            organize tasks, track progress, and stay motivated. Built with
-            React, TypeScript, and Node.js, it features task management,
-            real-time updates, and a drag-and-drop interface.
-          </p>
-        </div>
-        <div>
-          <iframe
-            src="https://task.ethanpassino.com"
-            class="w-full h-96 mt-4 rounded-lg"
-            allowfullscreen
-          ></iframe>
-        </div>
 
-        <!-- Nimbus Bot -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/Nimbus"
-            target="_blank"
-            >Nimbus Bot</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Nov 2024 - Current</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Discord.js</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Node.js</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Bot Development</span
-            >
-          </div>
-          <p>
-            Nimbus Bot is a powerful and customizable Discord bot designed to
-            enhance server management and user engagement. It includes robust
-            moderation tools, a music player, a dynamic leveling system, and
-            customizable server analytics.
-          </p>
-        </div>
-        <div>
-          <img
-            src="nimbus.gif"
-            alt="Nimbus Bot Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
+          <div class="modern-role-list">
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title"><strong>Shift Leader</strong><small>February 2024 &ndash; July 2025</small></span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Led teams of 6&ndash;15 employees per shift while coordinating service, hiring, training, and daily operations.</li>
+                  <li>Improved service flow and reduced labor costs by 5&ndash;10% through scheduling adjustments and better shift planning.</li>
+                  <li>Maintained customer satisfaction while balancing staffing needs, operational priorities, and team performance.</li>
+                </ul>
+                <div class="modern-role-footer">
+                  <div class="modern-role-tags"><span>Leadership</span><span>Operations</span><span>Training</span></div>
+                  <div class="modern-role-metrics"><span><strong>6&ndash;15</strong> employees led per shift</span><span><strong>5&ndash;10%</strong> labor-cost reduction</span></div>
+                </div>
+              </div>
+            </details>
 
-        <!-- Attendance Tracker System -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/seet-lab/Attendance_tracker_system_Fall_2023_Team_1/"
-            target="_blank"
-            >Attendance Tracker System</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: August 2023 - Dec 2023</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Java</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Android</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >QR Code</span
-            >
-          </div>
-          <p>
-            Attendance Tracker System is an Android-based app designed to
-            streamline attendance management for educational institutions. Built
-            with Java, it features QR code-based check-ins, detailed analytics,
-            and automated email notifications.
-          </p>
-        </div>
-        <div>
-          <img
-            src="attendancetracker.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
-        <!-- SmartLetter App -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold"
-            href="https://github.com/Ethan-Passino/SmartLetter"
-            target="_blank"
-            >SmartLetter</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: January 2025</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Python</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Tkinter</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >AI Integration</span
-            >
-          </div>
-          <p class="mt-4 text-sm leading-relaxed">
-            SmartLetter is a user-friendly desktop application that simplifies
-            the job application process by generating high-quality, personalized
-            cover letters powered by AI. With features like customizable tone,
-            resume integration, real-time generation, and save options,
-            SmartLetter makes it easy to craft professional letters tailored to
-            any job role.
-          </p>
-        </div>
-        <div>
-          <img
-            src="SmartLetter.gif"
-            alt="SmartLetter App Screenshot"
-            class="w-full h-auto rounded-lg shadow-lg"
-          />
-        </div>
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title"><strong>Team Trainer</strong><small>July 2023 &ndash; February 2024</small></span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Trained new team members on restaurant procedures, service expectations, food quality, and station responsibilities.</li>
+                  <li>Coached teammates through hands-on practice and helped reinforce consistent operating standards.</li>
+                </ul>
+                <div class="modern-role-footer"><div class="modern-role-tags"><span>Training</span><span>Coaching</span><span>Operations</span></div></div>
+              </div>
+            </details>
 
-        <!-- Web Crawler -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/Project2_CS232/"
-            target="_blank"
-            >Web Crawler</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Jan 2022 - May 2022</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >C</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Python</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Data Structures</span
-            >
-          </div>
-          <p>
-            Web Crawler is a system that efficiently traverses websites,
-            extracting and organizing data into a Trie structure for rapid
-            lookups. Developed in C with Python scripts, the crawler
-            demonstrates effective use of algorithms and data structures for
-            large-scale information retrieval.
-          </p>
-        </div>
-        <div>
-          <img
-            src="webcrawler.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title"><strong>Red Hat</strong><small>May 2023 &ndash; July 2023</small></span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Completed foundational role training and demonstrated readiness to support multiple restaurant stations.</li>
+                  <li>Helped maintain consistent food quality, service speed, and teamwork during active shifts.</li>
+                </ul>
+                <div class="modern-role-footer"><div class="modern-role-tags"><span>Service</span><span>Quality</span><span>Teamwork</span></div></div>
+              </div>
+            </details>
 
-        <!-- CommandAlias -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/CommandAlias"
-            target="_blank"
-            >CommandAlias</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: August 2021 - Sept 2021</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Java</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >BungeeCord</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Custom Commands</span
-            >
+            <details class="modern-role">
+              <summary>
+                <span class="modern-role-title"><strong>Crew Member</strong><small>May 2022 &ndash; May 2023</small></span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="modern-role-content">
+                <ul>
+                  <li>Provided customer service while preparing orders and supporting a fast-paced restaurant team.</li>
+                  <li>Followed food-safety, cleanliness, quality, and service standards across daily operations.</li>
+                </ul>
+                <div class="modern-role-footer"><div class="modern-role-tags"><span>Customer service</span><span>Food safety</span><span>Teamwork</span></div></div>
+              </div>
+            </details>
           </div>
-          <p>
-            CommandAlias is a lightweight Minecraft BungeeCord plugin that
-            simplifies server commands with custom aliases. Administrators can
-            easily define alternative commands and reload changes instantly
-            without restarting the server.
-          </p>
         </div>
-        <div>
-          <img
-            src="commandalias.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
+      </div>
 
-        <!-- PrefixRequest -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/PrefixRequest"
-            target="_blank"
-            >PrefixRequest</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Feb 2022 - March 2022</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Spigot</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Paper</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >GUI</span
-            >
+      <div class="experience-timeline space-y-6">
+        <!-- Juvare Career Progression -->
+        <article class="experience-card">
+          <div class="experience-logo current" aria-label="Juvare">
+            <img
+              src="juvare-favicon.png"
+              alt="Juvare logo"
+              class="site-favicon"
+            />
           </div>
-          <p>
-            PrefixRequest is a Minecraft plugin that streamlines custom prefix
-            management. With an intuitive GUI, players can request personalized
-            prefixes, and administrators can easily approve or deny them.
-          </p>
-        </div>
-        <div>
-          <img
-            src="prefixrequest.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
+          <div class="flex-1">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div>
+                <h3 class="text-2xl font-bold">Juvare</h3>
+                <a
+                  href="https://www.juvare.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-300 font-semibold hover:text-blue-200"
+                  >Enterprise software development <i class="fas fa-arrow-up-right-from-square text-xs"></i
+                ></a>
+              </div>
+              <p class="text-sm text-gray-400 whitespace-nowrap">
+                Fort Wayne, IN &middot; 2025&ndash;Present
+              </p>
+            </div>
 
-        <!-- Dragons -->
-        <div>
-          <a
-            class="link-header text-2xl font-bold hover:scale-110 transition-transform"
-            href="https://github.com/Ethan-Passino/Dragons"
-            target="_blank"
-            >Dragons</a
-          >
-          <p class="text-sm text-gray-400 mb-2">
-            <i>Timeline: Dec 2020 - Feb 2021</i>
-          </p>
-          <div class="flex flex-wrap mt-2 space-x-2">
-            <span
-              class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Python</span
-            >
-            <span
-              class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Text Adventure</span
-            >
-            <span
-              class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
-              >Game Design</span
-            >
+            <details class="experience-details">
+              <summary><span>Junior Software Engineer &middot; July 2025 &ndash; Present <em>Expand details</em></span><i class="fas fa-chevron-down"></i></summary>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Junior Software Engineer</h4>
+                <span class="text-sm text-blue-300">July 2025 &ndash; Present</span>
+              </div>
+              <ul>
+                <li>Delivered user-facing enterprise workflows, including record creation and editing, validation, history views, responsive layouts, and accessibility improvements.</li>
+                <li>Implemented data migrations and backfill processes across legacy and current data models, including validation, logging, and pre-release testing.</li>
+                <li>Built data-quality and administration features including seed data, deduplication, import/export workflows, and role-based access and navigation.</li>
+                <li>Expanded automated unit and end-to-end testing across these features, increasing unit-test coverage by 30% and Playwright coverage by 15%.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Playwright</span>
+              </div>
+              <div class="experience-metrics" aria-label="Junior software engineer highlights">
+                <div class="experience-metric"><strong>30%</strong><span>Unit-test coverage increase</span></div>
+                <div class="experience-metric"><strong>15%</strong><span>End-to-end coverage increase</span></div>
+                <div class="experience-metric"><strong>6+</strong><span>Core technologies</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Full Stack Developer Intern</h4>
+                <span class="text-sm text-blue-300">May 2025 &ndash; July 2025</span>
+              </div>
+              <ul>
+                <li>Built an intuitive drag-and-drop workflow builder with React, TypeScript, Node.js, and React Flow, enabling non-developers to configure processes that previously required developer involvement.</li>
+                <li>Developed reusable workflow components, connected the interface to backend services, and added automated tests for reliable end-to-end behavior.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React Flow</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Automated Testing</span>
+              </div>
+              <div class="experience-metrics" aria-label="Full stack developer intern highlights">
+                <div class="experience-metric"><strong>4</strong><span>Core technologies</span></div>
+                <div class="experience-metric"><strong>1</strong><span>Workflow builder delivered</span></div>
+              </div>
+            </div>
+            </details>
           </div>
-          <p>
-            Dragons is a Python-based text adventure game where players engage
-            in battles with mythical dragons, complete quests, and achieve
-            milestones. The game features configurable elements such as custom
-            dragons, moves, and storylines.
-          </p>
-        </div>
-        <div>
-          <img
-            src="dragons.gif"
-            alt="Project Screenshot"
-            class="w-full h-auto"
-          />
-        </div>
+        </article>
+
+        <!-- Pizza Hut Career Progression -->
+        <article class="experience-card">
+          <div class="experience-logo" aria-label="Pizza Hut">
+            <img
+              src="pizzahut-favicon.ico"
+              alt="Pizza Hut logo"
+              class="site-favicon"
+            />
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div>
+                <h3 class="text-2xl font-bold">Pizza Hut</h3>
+                <p class="text-blue-300 font-semibold">Restaurant Operations</p>
+              </div>
+              <p class="text-sm text-gray-400 whitespace-nowrap">
+                Fort Wayne, IN &middot; May 2022 &ndash; July 2025
+              </p>
+            </div>
+
+            <details class="experience-details">
+              <summary><span>Shift Leader &middot; February 2024 &ndash; July 2025 <em>Expand details</em></span><i class="fas fa-chevron-down"></i></summary>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Shift Leader</h4>
+                <span class="text-sm text-blue-300">February 2024 &ndash; July 2025</span>
+              </div>
+              <ul>
+                <li>Led teams of 6&ndash;15 employees per shift while coordinating service, hiring, training, and daily operations.</li>
+                <li>Improved service flow and reduced labor costs by 5&ndash;10% through scheduling adjustments and better shift planning.</li>
+                <li>Maintained customer satisfaction while balancing staffing needs, operational priorities, and team performance.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Leadership</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Operations</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Training</span>
+              </div>
+              <div class="experience-metrics" aria-label="Shift leader highlights">
+                <div class="experience-metric"><strong>6&ndash;15</strong><span>Employees led per shift</span></div>
+                <div class="experience-metric"><strong>5&ndash;10%</strong><span>Labor-cost reduction</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Team Trainer</h4>
+                <span class="text-sm text-blue-300">July 2023 &ndash; February 2024</span>
+              </div>
+              <ul>
+                <li>Trained new team members on restaurant procedures, service expectations, food quality, and station responsibilities.</li>
+                <li>Coached teammates through hands-on practice and helped reinforce consistent operating standards.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Team trainer highlights">
+                <div class="experience-metric"><strong>7 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>3rd</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Red Hat</h4>
+                <span class="text-sm text-blue-300">May 2023 &ndash; July 2023</span>
+              </div>
+              <ul>
+                <li>Completed foundational role training and demonstrated readiness to support multiple restaurant stations.</li>
+                <li>Helped maintain consistent food quality, service speed, and teamwork during active shifts.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Red Hat highlights">
+                <div class="experience-metric"><strong>2 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>2nd</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Crew Member</h4>
+                <span class="text-sm text-blue-300">May 2022 &ndash; May 2023</span>
+              </div>
+              <ul>
+                <li>Provided customer service while preparing orders and supporting a fast-paced restaurant team.</li>
+                <li>Followed food-safety, cleanliness, quality, and service standards across daily operations.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Crew member highlights">
+                <div class="experience-metric"><strong>12 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>1st</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+            </details>
+
+          </div>
+        </article>
       </div>
     </section>
     <br />
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="section-heading section-heading-projects">
+        <div>
+          <p class="section-kicker">Selected work</p>
+          <h2>Projects</h2>
+        </div>
+        <p>Applications and tools built across web, desktop, mobile, and game development.</p>
+      </div>
+      <div class="projects-showcase">
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="personalfinance.mp4" aria-label="Personal Finance App preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>01 / Current build</span><time>Dec 2024 &ndash; Present</time></div><h3>Personal Finance App</h3><p>A C# desktop application for budgeting, expense tracking, financial goals, and detailed reports.</p><div class="project-tags"><span>C#</span><span>Desktop application</span><span>Finance</span></div><a class="project-action" href="https://github.com/Ethan-Passino/PersonalFinanceApp" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><iframe class="showcase-iframe" data-iframe-src="https://chat.ethanpassino.com" title="NodeChat live preview" loading="lazy"></iframe></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>02 / Web application</span><time>Jan 2025 &ndash; Feb 2025</time></div><h3>NodeChat</h3><p>A real-time chat application with secure messaging, a responsive interface, and WebSocket interactions.</p><div class="project-tags"><span>React</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span></div><div class="showcase-actions"><a class="project-action" href="https://chat.ethanpassino.com" target="_blank" rel="noopener noreferrer">Live demo <i class="fas fa-arrow-up-right-from-square"></i></a><a class="project-action" href="https://github.com/Ethan-Passino/NodeChat" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><iframe class="showcase-iframe" data-iframe-src="https://task.ethanpassino.com" title="TaskFlow live preview" loading="lazy"></iframe></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>03 / Productivity tool</span><time>Aug 2024 &ndash; Dec 2024</time></div><h3>TaskFlow</h3><p>A gamified project management app with task tracking, real-time updates, and drag-and-drop organization.</p><div class="project-tags"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Gamification</span></div><div class="showcase-actions"><a class="project-action" href="https://task.ethanpassino.com" target="_blank" rel="noopener noreferrer">Live demo <i class="fas fa-arrow-up-right-from-square"></i></a><a class="project-action" href="https://github.com/Ethan-Passino/TaskFlow" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github"></i></a></div></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="brickthrower.mp4" aria-label="BrickThrower preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>04 / Game development</span><time>Jan 2021 &ndash; Jan 2024</time></div><h3>BrickThrower</h3><p>A Minecraft plugin for throwable bricks with configurable damage and velocity across versions 1.8 through 1.20.4.</p><div class="project-tags"><span>Java</span><span>Minecraft plugin</span><span>Game development</span></div><a class="project-action" href="https://github.com/Ethan-Passino/BrickThrower" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="nimbus.mp4" aria-label="Nimbus Bot preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>05 / Automation</span><time>Nov 2024 &ndash; Present</time></div><h3>Nimbus Bot</h3><p>A customizable Discord bot with moderation, music, leveling, and server analytics features.</p><div class="project-tags"><span>Discord.js</span><span>Node.js</span><span>Bot development</span></div><a class="project-action" href="https://github.com/Ethan-Passino/Nimbus" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="attendancetracker.mp4" aria-label="Attendance Tracker System preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>06 / Mobile application</span><time>Aug 2023 &ndash; Dec 2023</time></div><h3>Attendance Tracker System</h3><p>An Android app for QR-based attendance, analytics, and automated email notifications.</p><div class="project-tags"><span>Java</span><span>Android</span><span>QR code</span></div><a class="project-action" href="https://github.com/seet-lab/Attendance_tracker_system_Fall_2023_Team_1/" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="SmartLetter.mp4" aria-label="SmartLetter preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>07 / Desktop application</span><time>Jan 2025</time></div><h3>SmartLetter</h3><p>An AI-assisted desktop tool for creating personalized cover letters with resume context, tone controls, and saving.</p><div class="project-tags"><span>Python</span><span>Tkinter</span><span>AI integration</span></div><a class="project-action" href="https://github.com/Ethan-Passino/SmartLetter" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="webcrawler.mp4" aria-label="Web Crawler preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>08 / Algorithms</span><time>Jan 2022 &ndash; May 2022</time></div><h3>Web Crawler</h3><p>A C-based crawler that organizes extracted website data in a Trie structure for fast lookups.</p><div class="project-tags"><span>C</span><span>Python</span><span>Data structures</span></div><a class="project-action" href="https://github.com/Ethan-Passino/Project2_CS232/" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="commandalias.mp4" aria-label="CommandAlias preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>09 / Server tooling</span><time>Aug 2021 &ndash; Sept 2021</time></div><h3>CommandAlias</h3><p>A lightweight Minecraft plugin for custom command aliases and instant configuration reloads.</p><div class="project-tags"><span>Java</span><span>BungeeCord</span><span>Custom commands</span></div><a class="project-action" href="https://github.com/Ethan-Passino/CommandAlias" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="prefixrequest.mp4" aria-label="PrefixRequest preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>10 / Server tooling</span><time>Feb 2022 &ndash; Mar 2022</time></div><h3>PrefixRequest</h3><p>A Minecraft plugin with a GUI for requesting, approving, and managing custom player prefixes.</p><div class="project-tags"><span>Spigot</span><span>Paper</span><span>GUI</span></div><a class="project-action" href="https://github.com/Ethan-Passino/PrefixRequest" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+        <article class="showcase-project">
+          <div class="showcase-media"><video class="showcase-video" data-video-src="dragons.mp4" aria-label="Dragons preview" muted loop playsinline preload="none"></video></div>
+          <div class="showcase-content"><div class="showcase-meta"><span>11 / Game development</span><time>Dec 2020 &ndash; Feb 2021</time></div><h3>Dragons</h3><p>A configurable Python text adventure with battles, quests, custom dragons, moves, and storylines.</p><div class="project-tags"><span>Python</span><span>Text adventure</span><span>Game design</span></div><a class="project-action" href="https://github.com/Ethan-Passino/Dragons" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+        </article>
+      </div>
+
+    </section>
+    <br />
+
     <!-- Contact Section -->
-    <section id="contact" class="text-center py-20">
-      <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
-      <p>Feel free to reach out for collaboration or questions.</p>
-      <form
-        class="max-w-lg mx-auto mt-6"
-        action="https://formspree.io/f/xnnqynlz"
-        method="POST"
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          class="w-full p-3 mb-4 rounded bg-gray-800 text-white"
-        ></textarea>
-        <button class="button" type="submit">Send Message</button>
-      </form>
+    <section id="contact" class="py-20">
+      <div class="contact-heading">
+        <div>
+          <p class="contact-kicker">Let&apos;s connect</p>
+          <h2>Have a project or opportunity in mind?</h2>
+        </div>
+        <p>
+          I&apos;m always interested in thoughtful software, useful products, and
+          conversations about building better systems.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <span class="contact-intro-label">Start a conversation</span>
+          <h3>Let&apos;s build something useful.</h3>
+          <p>
+            Whether you want to discuss a software opportunity, collaborate on
+            a project, or talk through an idea, send a message and I&apos;ll get
+            back to you.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://github.com/Ethan-Passino" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i><span>GitHub<small>View my code</small></span>
+            </a>
+            <a href="https://linkedin.com/in/ethan-passino-65a08b337" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i><span>LinkedIn<small>Connect professionally</small></span>
+            </a>
+            <a href="https://discord.gg/0deI7V0QFPpXLQJW" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-discord"></i><span>Discord<small>Join the conversation</small></span>
+            </a>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xnnqynlz"
+          method="POST"
+        >
+          <div class="contact-form-header">
+            <h3>Send a message</h3>
+            <span><i class="fas fa-paper-plane"></i></span>
+          </div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
+          <label for="contact-subject">Subject</label>
+          <input id="contact-subject" name="subject" type="text" placeholder="What would you like to discuss?" />
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Tell me a little about it..." required></textarea>
+          <button class="contact-submit" type="submit">Send message <i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
     </section>
     <br />
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Ethan Passino. All rights reserved.</p>
+      <p>&copy; 2026 Ethan Passino. All rights reserved.</p>
     </footer>
 
     <script>
       const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("#navbar a");
+      const navLinks = document.querySelectorAll("#navbar a, #dropdown-menu a");
 
-      // Highlight active navigation link based on scroll position
-      window.addEventListener("scroll", () => {
+      // Highlight the section currently in view, including Contact at page end.
+      const updateActiveNav = () => {
         let current = "";
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (pageYOffset >= sectionTop) {
+          const sectionTop = section.offsetTop - 120;
+          if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id");
           }
         });
+
+        if (
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 4
+        ) {
+          current = "contact";
+        }
+
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href").includes(current)) {
+          if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
           }
         });
-      });
+      };
+
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      window.addEventListener("resize", updateActiveNav);
+      updateActiveNav();
+
+      const lazyVideos = document.querySelectorAll(".showcase-video[data-video-src]");
+      const loadAndPlayVideo = (video) => {
+        if (!video.hasAttribute("src")) {
+          video.setAttribute("src", video.dataset.videoSrc);
+          video.load();
+        }
+
+        video.play().catch(() => {});
+      };
+
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              loadAndPlayVideo(video);
+            } else {
+              video.pause();
+            }
+          });
+        }, { rootMargin: "250px 0px", threshold: 0.01 });
+
+        lazyVideos.forEach((video) => videoObserver.observe(video));
+      } else {
+        lazyVideos.forEach(loadAndPlayVideo);
+      }
+
+      const lazyIframes = document.querySelectorAll(".showcase-iframe[data-iframe-src]");
+      const loadIframe = (iframe) => {
+        if (!iframe.hasAttribute("src")) {
+          iframe.setAttribute("src", iframe.dataset.iframeSrc);
+        }
+      };
+
+      if ("IntersectionObserver" in window) {
+        const iframeObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadIframe(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "250px 0px", threshold: 0.01 });
+
+        lazyIframes.forEach((iframe) => iframeObserver.observe(iframe));
+      } else {
+        lazyIframes.forEach(loadIframe);
+      }
 
       // Mobile menu toggle
       const menuToggle = document.getElementById("menu-toggle");
@@ -974,6 +866,10 @@
 
       menuToggle.addEventListener("click", () => {
         dropdownMenu.classList.toggle("hidden");
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(!dropdownMenu.classList.contains("hidden"))
+        );
       });
 
       // Close dropdown menu when a link is clicked
@@ -981,6 +877,7 @@
       dropdownLinks.forEach((link) => {
         link.addEventListener("click", () => {
           dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
         });
       });
 
@@ -991,6 +888,15 @@
           !dropdownMenu.contains(e.target)
         ) {
           dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !dropdownMenu.classList.contains("hidden")) {
+          dropdownMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.focus();
         }
       });
     </script>
