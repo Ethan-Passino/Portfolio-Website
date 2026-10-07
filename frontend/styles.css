@@ -963,6 +963,7 @@
       }
 
       .showcase-media img,
+      .showcase-media video,
       .showcase-media iframe {
         width: 100%;
         height: 100%;
@@ -971,11 +972,13 @@
         object-fit: cover;
       }
 
-      .showcase-media img {
+      .showcase-media img,
+      .showcase-media video {
         transition: transform 0.45s ease;
       }
 
-      .showcase-project:hover .showcase-media img {
+      .showcase-project:hover .showcase-media img,
+      .showcase-project:hover .showcase-media video {
         transform: scale(1.02);
       }
 
@@ -1042,6 +1045,7 @@
 
         .showcase-media,
         .showcase-media img,
+        .showcase-media video,
         .showcase-media iframe {
           min-height: 14rem;
         }
