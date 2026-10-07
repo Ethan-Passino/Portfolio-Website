@@ -197,6 +197,159 @@
         line-height: 1.6;
         font-size: 1rem;
       }
+
+      /* Experience Cards */
+      .experience-timeline {
+        position: relative;
+      }
+
+      .experience-timeline::before {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        bottom: 2rem;
+        left: 1.5rem;
+        width: 2px;
+        background: linear-gradient(#4a90e2, #003d73);
+      }
+
+      .experience-card {
+        position: relative;
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.75rem;
+        margin-left: 3.25rem;
+        background-color: #1f2937;
+        color: #b0b0b0;
+        border-radius: 10px;
+        border: 1px solid rgba(74, 144, 226, 0.25);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .experience-logo {
+        display: flex;
+        position: absolute;
+        top: 1.75rem;
+        left: -5rem;
+        flex: 0 0 3.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.75rem;
+        background: linear-gradient(135deg, #4a90e2, #003d73);
+        border: 3px solid #020817;
+        color: #ffffff;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .experience-logo.current {
+        box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2), 0 0 18px rgba(74, 144, 226, 0.55);
+      }
+
+      .experience-logo.current::after {
+        content: "";
+        position: absolute;
+        right: -0.3rem;
+        top: -0.3rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 9999px;
+        background: #60a5fa;
+        border: 2px solid #020817;
+      }
+
+      .experience-logo img {
+        width: 100%;
+        height: 100%;
+        padding: 0.35rem;
+        object-fit: contain;
+        border-radius: 0.6rem;
+        background: #ffffff;
+      }
+
+      .experience-role {
+        padding: 1rem 0;
+        border-top: 1px solid rgba(156, 163, 175, 0.2);
+      }
+
+      .experience-role:first-of-type {
+        margin-top: 1.25rem;
+      }
+
+      .experience-role ul {
+        margin-top: 0.75rem;
+        padding-left: 1.25rem;
+        list-style: disc;
+      }
+
+      .experience-role li {
+        margin-top: 0.35rem;
+        line-height: 1.55;
+      }
+
+      .experience-metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+
+      .experience-metric {
+        padding: 0.8rem;
+        text-align: center;
+        background: rgba(3, 29, 64, 0.7);
+        border-radius: 0.6rem;
+      }
+
+      .experience-metric strong {
+        display: block;
+        color: #60a5fa;
+        font-size: 1.4rem;
+      }
+
+      .experience-metric span {
+        display: block;
+        margin-top: 0.2rem;
+        color: #d1d5db;
+        font-size: 0.75rem;
+      }
+
+      .experience-card p {
+        line-height: 1.6;
+      }
+
+      @media (max-width: 640px) {
+        .experience-timeline::before {
+          left: 1rem;
+        }
+
+        .experience-card {
+          gap: 1rem;
+          padding: 1.25rem;
+          margin-left: 2.25rem;
+        }
+
+        .experience-logo {
+          top: 1.25rem;
+          left: -3.5rem;
+          flex-basis: 2.75rem;
+          width: 3rem;
+          height: 2.75rem;
+          font-size: 1rem;
+        }
+
+        .experience-metrics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
       .dropdown-link {
         display: block;
         padding: 10px 20px;
@@ -240,6 +393,7 @@
               >Technical Competencies</a
             >
           </li>
+          <li><a href="#experience" class="hover:text-blue-400">Experience</a></li>
           <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
           <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
         </ul>
@@ -265,6 +419,7 @@
               >Technical Competencies</a
             >
           </li>
+          <li><a href="#experience" class="dropdown-link">Experience</a></li>
           <li><a href="#projects" class="dropdown-link">Projects</a></li>
           <li><a href="#contact" class="dropdown-link">Contact</a></li>
         </ul>
@@ -341,25 +496,24 @@
         practical, impactful applications.
       </p>
       <p class="mt-4 max-w-3xl mx-auto">
-        My journey started in high school with Python and Java, where I built
-        small games and experimented with web development. Since then, I’ve
-        grown into a full-stack developer with experience in
-        <strong>React</strong>, <strong>Node.js</strong>,
-        <strong>MongoDB</strong>, and <strong>C++</strong>.
+        I have over a year of professional software engineering experience,
+        building and improving full-stack applications with
+        <strong>React</strong>, <strong>TypeScript</strong>,
+        <strong>Node.js</strong>, and modern testing tools. My work includes
+        user-facing workflows, data migrations, backend services, and features
+        designed to make complex processes easier to use.
       </p>
       <p class="mt-4 max-w-3xl mx-auto">
-        I recently earned my
+        I earned my
         <strong
           >Computer Science degree from Purdue University Fort Wayne</strong
-        >, where I focused on data structures, algorithms, system design, and
-        real-world projects like a
-        <em>Rewinder Batch Trimming & Scheduling System</em> for a manufacturing
-        company.
+        >, where I developed a strong foundation in data structures,
+        algorithms, system design, and software development.
       </p>
       <p class="mt-4 max-w-3xl mx-auto">
-        Whether it's creating polished user interfaces or optimizing backend
-        systems, I love solving problems and bringing ideas to life. I’m now
-        actively seeking full-time software engineering opportunities.
+        I enjoy turning ambiguous problems into reliable software—whether that
+        means creating a polished interface, designing a maintainable backend,
+        improving data quality, or expanding automated test coverage.
       </p>
     </section>
     <br />
@@ -453,6 +607,181 @@
             UI/UX, and automation.
           </p>
         </div>
+      </div>
+    </section>
+    <br />
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+      <h2 class="text-4xl font-bold text-center mb-4">Experience</h2>
+      <p class="text-center max-w-3xl mx-auto mb-10">
+        A snapshot of the roles where I have built software, improved workflows,
+        and developed leadership experience.
+      </p>
+
+      <div class="experience-timeline space-y-6">
+        <!-- Juvare Career Progression -->
+        <article class="experience-card">
+          <div class="experience-logo current" aria-label="Juvare">
+            <img
+              src="juvare-favicon.png"
+              alt="Juvare logo"
+              class="site-favicon"
+            />
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div>
+                <h3 class="text-2xl font-bold">Juvare</h3>
+                <a
+                  href="https://www.juvare.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-300 font-semibold hover:text-blue-200"
+                  >Enterprise software development <i class="fas fa-arrow-up-right-from-square text-xs"></i
+                ></a>
+              </div>
+              <p class="text-sm text-gray-400 whitespace-nowrap">
+                Fort Wayne, IN &middot; 2025&ndash;Present
+              </p>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Junior Software Engineer</h4>
+                <span class="text-sm text-blue-300">July 2025 &ndash; Present</span>
+              </div>
+              <ul>
+                <li>Delivered user-facing enterprise workflows, including record creation and editing, validation, history views, responsive layouts, and accessibility improvements.</li>
+                <li>Implemented data migrations and backfill processes across legacy and current data models, including validation, logging, and pre-release testing.</li>
+                <li>Built data-quality and administration features including seed data, deduplication, import/export workflows, and role-based access and navigation.</li>
+                <li>Expanded automated unit and end-to-end testing across these features, increasing unit-test coverage by 30% and Playwright coverage by 15%.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Playwright</span>
+              </div>
+              <div class="experience-metrics" aria-label="Junior software engineer highlights">
+                <div class="experience-metric"><strong>30%</strong><span>Unit-test coverage increase</span></div>
+                <div class="experience-metric"><strong>15%</strong><span>End-to-end coverage increase</span></div>
+                <div class="experience-metric"><strong>6+</strong><span>Core technologies</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Full Stack Developer Intern</h4>
+                <span class="text-sm text-blue-300">May 2025 &ndash; July 2025</span>
+              </div>
+              <ul>
+                <li>Built an intuitive drag-and-drop workflow builder with React, TypeScript, Node.js, and React Flow, enabling non-developers to configure processes that previously required developer involvement.</li>
+                <li>Developed reusable workflow components, connected the interface to backend services, and added automated tests for reliable end-to-end behavior.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">React Flow</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Automated Testing</span>
+              </div>
+              <div class="experience-metrics" aria-label="Full stack developer intern highlights">
+                <div class="experience-metric"><strong>4</strong><span>Core technologies</span></div>
+                <div class="experience-metric"><strong>1</strong><span>Workflow builder delivered</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pizza Hut Career Progression -->
+        <article class="experience-card">
+          <div class="experience-logo" aria-label="Pizza Hut">
+            <img
+              src="pizzahut-favicon.ico"
+              alt="Pizza Hut logo"
+              class="site-favicon"
+            />
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div>
+                <h3 class="text-2xl font-bold">Pizza Hut</h3>
+                <p class="text-blue-300 font-semibold">Restaurant Operations</p>
+              </div>
+              <p class="text-sm text-gray-400 whitespace-nowrap">
+                Fort Wayne, IN &middot; May 2022 &ndash; July 2025
+              </p>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Shift Leader</h4>
+                <span class="text-sm text-blue-300">February 2024 &ndash; July 2025</span>
+              </div>
+              <ul>
+                <li>Led teams of 6&ndash;15 employees per shift while coordinating service, hiring, training, and daily operations.</li>
+                <li>Improved service flow and reduced labor costs by 5&ndash;10% through scheduling adjustments and better shift planning.</li>
+                <li>Maintained customer satisfaction while balancing staffing needs, operational priorities, and team performance.</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Leadership</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Operations</span>
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Training</span>
+              </div>
+              <div class="experience-metrics" aria-label="Shift leader highlights">
+                <div class="experience-metric"><strong>6&ndash;15</strong><span>Employees led per shift</span></div>
+                <div class="experience-metric"><strong>5&ndash;10%</strong><span>Labor-cost reduction</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Team Trainer</h4>
+                <span class="text-sm text-blue-300">July 2023 &ndash; February 2024</span>
+              </div>
+              <ul>
+                <li>Trained new team members on restaurant procedures, service expectations, food quality, and station responsibilities.</li>
+                <li>Coached teammates through hands-on practice and helped reinforce consistent operating standards.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Team trainer highlights">
+                <div class="experience-metric"><strong>7 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>3rd</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Red Hat</h4>
+                <span class="text-sm text-blue-300">May 2023 &ndash; July 2023</span>
+              </div>
+              <ul>
+                <li>Completed foundational role training and demonstrated readiness to support multiple restaurant stations.</li>
+                <li>Helped maintain consistent food quality, service speed, and teamwork during active shifts.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Red Hat highlights">
+                <div class="experience-metric"><strong>2 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>2nd</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+
+            <div class="experience-role">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h4 class="text-xl font-bold text-white">Crew Member</h4>
+                <span class="text-sm text-blue-300">May 2022 &ndash; May 2023</span>
+              </div>
+              <ul>
+                <li>Provided customer service while preparing orders and supporting a fast-paced restaurant team.</li>
+                <li>Followed food-safety, cleanliness, quality, and service standards across daily operations.</li>
+              </ul>
+              <div class="experience-metrics" aria-label="Crew member highlights">
+                <div class="experience-metric"><strong>12 mo</strong><span>Time in role</span></div>
+                <div class="experience-metric"><strong>1st</strong><span>Role in progression</span></div>
+              </div>
+            </div>
+
+          </div>
+        </article>
       </div>
     </section>
     <br />
