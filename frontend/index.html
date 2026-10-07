@@ -154,6 +154,118 @@
         margin: 0 auto; /* Ensure content stays in the middle */
       }
 
+      /* About Me */
+      .about-layout {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.8fr);
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-portrait {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: linear-gradient(145deg, rgba(31, 41, 55, 0.95), rgba(3, 29, 64, 0.75));
+        border: 1px solid rgba(74, 144, 226, 0.3);
+        border-radius: 1rem;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-portrait img {
+        width: 11rem;
+        height: 11rem;
+        border: 4px solid rgba(74, 144, 226, 0.65);
+        box-shadow: 0 0 0 8px rgba(74, 144, 226, 0.1);
+      }
+
+      .about-portrait-label {
+        color: #bfdbfe;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      .about-kicker {
+        margin-bottom: 0.75rem;
+        color: #60a5fa;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .about-content h2 {
+        margin-bottom: 1rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+        text-align: left;
+      }
+
+      .about-lead {
+        max-width: 46rem;
+        color: #e5e7eb;
+        font-size: 1.2rem;
+        line-height: 1.65;
+      }
+
+      .about-content p:not(.about-kicker):not(.about-lead) {
+        max-width: 46rem;
+        margin-top: 1rem;
+        line-height: 1.7;
+      }
+
+      .about-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+
+      .about-fact {
+        padding: 1rem;
+        background: rgba(3, 29, 64, 0.72);
+        border: 1px solid rgba(74, 144, 226, 0.2);
+        border-radius: 0.75rem;
+      }
+
+      .about-fact strong {
+        display: block;
+        color: #ffffff;
+        font-size: 1.05rem;
+      }
+
+      .about-fact span {
+        display: block;
+        margin-top: 0.25rem;
+        color: #93c5fd;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 767px) {
+        .about-layout {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .about-portrait {
+          max-width: 18rem;
+          margin: 0 auto;
+        }
+
+        .about-content h2,
+        .about-kicker {
+          text-align: center;
+        }
+
+        .about-facts {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Footer */
       footer {
         margin-top: 50px;
@@ -484,37 +596,48 @@
 
     <!-- About Me Section -->
     <section id="about" class="py-20 text-center">
-      <img
-        src="Ethan.jpg?v=20261007"
-        alt="Profile"
-        class="rounded-full mx-auto w-48 h-48 object-cover object-[50%_20%]"
-      />
-      <h2 class="text-4xl font-bold mt-10">About Me</h2>
-      <p class="mt-4 max-w-3xl mx-auto">
-        Hi, I’m <strong>Ethan Passino</strong> — a passionate and driven
-        <strong>software engineer</strong> with a deep love for building
-        practical, impactful applications.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        I have over a year of professional software engineering experience,
-        building and improving full-stack applications with
-        <strong>React</strong>, <strong>TypeScript</strong>,
-        <strong>Node.js</strong>, and modern testing tools. My work includes
-        user-facing workflows, data migrations, backend services, and features
-        designed to make complex processes easier to use.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        I earned my
-        <strong
-          >Computer Science degree from Purdue University Fort Wayne</strong
-        >, where I developed a strong foundation in data structures,
-        algorithms, system design, and software development.
-      </p>
-      <p class="mt-4 max-w-3xl mx-auto">
-        I enjoy turning ambiguous problems into reliable software—whether that
-        means creating a polished interface, designing a maintainable backend,
-        improving data quality, or expanding automated test coverage.
-      </p>
+      <div class="about-layout text-left">
+        <div class="about-portrait">
+          <img
+            src="Ethan.jpg?v=20261007"
+            alt="Portrait of Ethan Passino"
+            class="rounded-full object-cover object-[50%_20%]"
+          />
+          <span class="about-portrait-label">Software Engineer</span>
+        </div>
+
+        <div class="about-content">
+          <p class="about-kicker">A little about me</p>
+          <h2>Building software that makes complex work feel simple.</h2>
+          <p class="about-lead">
+            Hi, I’m <strong>Ethan Passino</strong>—a software engineer focused
+            on practical full-stack applications, thoughtful user experiences,
+            and reliable systems.
+          </p>
+          <p>
+            With over a year of professional experience, I’ve worked across
+            React, TypeScript, Node.js, data migrations, backend services, and
+            automated testing. I enjoy taking an ambiguous problem and turning
+            it into a clear workflow that people can use with confidence.
+          </p>
+
+          <div class="about-facts" aria-label="Professional highlights">
+            <div class="about-fact">
+              <strong>1+ year</strong>
+              <span>Professional software experience</span>
+            </div>
+            <div class="about-fact">
+              <strong>Full stack</strong>
+              <span>Frontend, backend, and data work</span>
+            </div>
+            <div class="about-fact">
+              <strong>CS graduate</strong>
+              <span>Purdue University Fort Wayne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
     <br />
 
