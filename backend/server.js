@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
